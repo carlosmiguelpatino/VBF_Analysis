@@ -1,5 +1,4 @@
 Delphes Generation
-
 ==================
 
 1. Copy Delphes paramaters card
