@@ -20,4 +20,5 @@ Generate MadGraph5 Simulation
 4. If other processes neede, use `add process`
 5. Set and ouput folder for all files generated during simulation using `output`
 6. Launch simulation using `launch -m`
+7. Choose setting of cards used in simulation
 
