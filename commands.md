@@ -13,11 +13,11 @@ Generate MadGraph5 Simulation
 
 1. Open MadGraph5
    * mg5_mg5_aMC
-2. Import model for simulation using 'import'
+2. Import model for simulation using `import`
    * import model SM_HeavyN_NLO
-3. Generate process using 'generate'
+3. Generate process using `generate`
    * generate p p > n3 ta+ j j, n3 > ta+ j j QCD=0
-4. If other processes neede, use 'add process'
-5. Set and ouput folder for all files generated during simulation using 'output'
-6. Launch simulation using 'launch -m'
+4. If other processes neede, use `add process`
+5. Set and ouput folder for all files generated during simulation using `output`
+6. Launch simulation using `launch -m`
 
