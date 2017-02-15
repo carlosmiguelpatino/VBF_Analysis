@@ -12,7 +12,7 @@ Generate MadGraph5 Simulation
 =======================
 
 1. Open MadGraph5
-   * mg5_mg5_aMC
+   * mg5_aMC
 2. Import model for simulation using `import`
    * import model SM_HeavyN_NLO
 3. Generate process using `generate`
