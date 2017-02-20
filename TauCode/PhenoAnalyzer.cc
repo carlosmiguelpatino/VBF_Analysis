@@ -271,7 +271,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
 
       if ((Jet_1.Pt() < 30.0) || (abs(Jet_1.Eta()) > 5.0)){continue;}
 
-      for (int sj = 0; sj < jets_tlv_list_tc.size(); sj++){
+      for (int sj = k + 1; sj < jets_tlv_list_tc.size(); sj++){
 
         if (sj != k){
 
@@ -287,6 +287,12 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
           }
         }
       }
+    }
+
+    if(Jet_leading_vec_tc.Pt() < Jet_sleading_vec_tc.Pt()){
+      tmp_tlv = Jet_leading_vec_tc;
+      Jet_leading_vec_tc = Jet_sleading_vec_tc;
+      Jet_sleading_vec_tc = tmp_tlv;
     }
 
     if(jets_tlv_list_tc.size() > 3){
