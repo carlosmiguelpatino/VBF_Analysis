@@ -485,7 +485,7 @@ void PhenoAnalysis::crateHistoMasps (int directories)
       _hmap_slead_jet_pT[i]   = new TH1F("jet_slead_pT",    "p_{T} Sub-leading Jet", 200, 0., 2000.);
       _hmap_slead_jet_eta[i]  = new TH1F("jet_slead_eta",   "#eta Sub-leading Jet", 50, -5.0, 5.0);
       _hmap_slead_jet_phi[i]  = new TH1F("jet_slead_phi",   "#phi Sub-leading Jet", 70, -3.6, 3.6);
-      _hmap_n_jets[i]        = new TH1F("N_jets",         "N(jet)", 4, 0, 6);
+      _hmap_n_jets[i]        = new TH1F("N_jets",         "N(jet)", 6, 0, 6);
       _hmap_n_tau[i]         = new TH1F("N_taus",          "N(#tau)", 4, 0, 4);
       _hmap_tau1_pT[i]       = new TH1F("tau1_pT",        "p_{T}(#tau_{1})", 200, 0., 2000.);
       _hmap_tau1_eta[i]      = new TH1F("tau1_eta",       "#eta(#tau_{1})", 50, -3.5, 3.5);
