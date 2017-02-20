@@ -103,23 +103,23 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     //////////////////Tau Channel///////////
     //Search for taus and bjets
     for (int j = 0; j < branchJet->GetEntriesFast(); j++){
-      
+
       Jet *jet = (Jet*) branchJet->At(j);
-      
+
       if((jet->BTag == 1) && (jet->PT > b_jet_pt_min)){n_b_jets_tc++;}
-      
+
       //Tau search
       if((jet->TauTag == 1) && (jet->PT > tau_pt_min)){
-	
+
         ntau_counter++;
         double tau_energy = calculateE(jet->Eta, jet->PT, jet->Mass);
         if((fill_tau1 == false) && (fill_tau2 == false) && (fill_tau3 == false)){
-          
+
           Tau1HadTLV.SetPtEtaPhiE(jet->PT, jet->Eta, jet->Phi, tau_energy);
           fill_tau1 = true;
           continue;
         }
-	
+
         if((fill_tau1 == true) && (fill_tau2 == false) && (fill_tau3 == false)){
           Tau2HadTLV.SetPtEtaPhiE(jet->PT, jet->Eta, jet->Phi, tau_energy);
           fill_tau2 = true;
@@ -159,93 +159,93 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
         Tau3HadTLV.SetPtEtaPhiE(0.,0.,0.,0.);
         ntau_counter--;
       }
-      
+
       if(DR_tau2_muon < DR_jet_lep_max){
         tau2_muon_overlap = true;
         Tau2HadTLV.SetPtEtaPhiE(0.,0.,0.,0.);
         ntau_counter--;
       }
-      
+
       if(DR_tau1_muon < DR_jet_lep_max){
         tau1_muon_overlap = true;
         Tau1HadTLV.SetPtEtaPhiE(0.,0.,0.,0.);
         ntau_counter--;
       }
     } // for (int muo = 0; muo < branchMuon->GetEntriesFast(); muo++)
-    
+
     //Check if taus overlap with electrons
     for (int el = 0; el < branchElectron->GetEntriesFast(); el++){
-      
+
       if(tau1_elec_overlap && tau2_elec_overlap && tau3_elec_overlap){break;}
-      
+
       Electron *elec = (Electron*) branchElectron->At(el);
       double elec_energy = calculateE(elec->Eta, elec->PT, 0.000510998902);
       elec_i.SetPtEtaPhiE(elec->PT, elec->Eta, elec->Phi, elec_energy);
-      
+
       double DR_tau1_elec = Tau1HadTLV.DeltaR(elec_i);
       double DR_tau2_elec = Tau2HadTLV.DeltaR(elec_i);
       double DR_tau3_elec = Tau3HadTLV.DeltaR(elec_i);
-      
+
       if (DR_tau3_elec < DR_jet_lep_max){
         tau3_elec_overlap = true;
         Tau3HadTLV.SetPtEtaPhiE(0.,0.,0.,0.);
         ntau_counter--;
       }
-      
+
       if(DR_tau2_elec < DR_jet_lep_max){
         tau2_elec_overlap = true;
         Tau2HadTLV.SetPtEtaPhiE(0.,0.,0.,0.);
         ntau_counter--;
       }
-      
+
       if(DR_tau1_elec < DR_jet_lep_max){
         tau1_elec_overlap = true;
         Tau1HadTLV.SetPtEtaPhiE(0.,0.,0.,0.);
         ntau_counter--;
       }
     }
-    
-    
+
+
     //Check if jets overlap with taus
     int n_jets = 0;
-    
+
     for (int l = 0; l < branchJet->GetEntriesFast(); l++){
-      
+
       Jet *jet = (Jet*) branchJet->At(l);
-      
+
       if((jet->PT > jet_min_pt) && (jet->TauTag == 0) && (jet->BTag == 0)){
-	
+
         double jet_i_energy = calculateE(jet->Eta, jet->PT, jet->Mass);
         jet_i.SetPtEtaPhiE(jet->PT, jet->Eta, jet->Phi, jet_i_energy);
-	
+
         //Check if jet overlaps with any of the taus
         double DR_tau1_jet = Tau1HadTLV.DeltaR(jet_i);
         double DR_tau2_jet = Tau2HadTLV.DeltaR(jet_i);
         double DR_tau3_jet = Tau3HadTLV.DeltaR(jet_i);
-	
+
         if((DR_tau1_jet < DR_jet_lep_max)){
           Tau1HadTLV.SetPtEtaPhiE(0.,0.,0.,0.);
           ntau_counter--;
         }
-	
+
         if(DR_tau2_jet < DR_jet_lep_max){
           Tau2HadTLV.SetPtEtaPhiE(0.,0.,0.,0.);
           ntau_counter--;
         }
-	
+
         if(DR_tau2_jet < DR_jet_lep_max){
           Tau3HadTLV.SetPtEtaPhiE(0.,0.,0.,0.);
           ntau_counter--;
         }
-	
+
         if((n_jets <= 6) && (jet->TauTag == 0) && (jet->BTag == 0) && (abs(jet->Eta) < 5.0)){
           jets_tlv_list_tc.push_back(jet_i);
           n_jets++;
         }
       }
     }
-    
-    
+
+
     //Order taus by pt
     for(int pt_order = 0; pt_order < 3; pt_order++){
       if(Tau2HadTLV.Pt() < Tau3HadTLV.Pt()){
@@ -259,22 +259,22 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
         Tau2HadTLV = tmp_tlv;
       }
     }
-    
+
     int dijet_index1 = 0;
     int dijet_index2 = 0;
-    
+
     //Search DiJetMass
     for(int k = 0; k < jets_tlv_list_tc.size(); k++){
-      
+
       if (jets_tlv_list_tc.size() < 4){break;}
       Jet_1 = jets_tlv_list_tc[k];
 
       if ((Jet_1.Pt() < 30.0) || (abs(Jet_1.Eta()) > 5.0)){continue;}
 
       for (int sj = 0; sj < jets_tlv_list_tc.size(); sj++){
-	
+
         if (sj != k){
-	  
+
           Jet_2 = jets_tlv_list_tc[sj];
           if ((Jet_2.Pt() < 30.0) || (abs(Jet_2.Eta()) > 5.0)){continue;}
           double DiJetMass = (Jet_1+Jet_2).M();
@@ -288,20 +288,20 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
         }
       }
     }
-    
+
     if(jets_tlv_list_tc.size() > 3){
-      
+
       tmp_tlv = jets_tlv_list_tc[jets_tlv_list_tc.size() - 1];
       jets_tlv_list_tc[jets_tlv_list_tc.size() - 1] = jets_tlv_list_tc[dijet_index1];
       jets_tlv_list_tc[dijet_index1] = tmp_tlv;
-      
+
       tmp_tlv = jets_tlv_list_tc[jets_tlv_list_tc.size() - 2];
       jets_tlv_list_tc[jets_tlv_list_tc.size() -2] = jets_tlv_list_tc[dijet_index2];
       jets_tlv_list_tc[dijet_index2] = tmp_tlv;
-      
+
       jets_tlv_list_tc.pop_back();
       jets_tlv_list_tc.pop_back();
-      
+
       //Order jets by pt
       for(int jet_order = 0; jet_order < 4; jet_order++){
         if(jets_tlv_list_tc[2].Pt() < jets_tlv_list_tc[3].Pt()){
@@ -321,7 +321,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
         }
       }
     }
-    
+
     //Check for jets pt condition
     int jet_pt_condition = 0;
     bool pass_jet_min_pt = true;
@@ -346,22 +346,20 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
 
       }
     }
-    
+
     if (jet_pt_condition > 1) {
- 
+
       st += Tau1HadTLV.Pt() + Tau2HadTLV.Pt() + Tau3HadTLV.Pt() + Jet_leading_vec_tc.Pt() + Jet_sleading_vec_tc.Pt();
 
       for (int i = 0; i < jets_tlv_list_tc.size(); i++) {
 	st += jets_tlv_list_tc[i].Pt();
       }
     }
-    
+
     //////// Apply cuts /////////
     // Events with no cuts
-    int n_jets_histos[nDir];
-    int n_taus_histos[nDir];
     pass_cuts[0] = 1;
-    
+
     // Events with 2 taus with min pt
     if ((Tau1HadTLV.Pt() > tau_pt_cut) && (Tau2HadTLV.Pt() > tau_pt_cut)){
       pass_cuts[1] = 1;
@@ -390,13 +388,13 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     if ((pass_cuts[6] == 1) && (DiJetMass_final > 500.)){
       pass_cuts[7] = 1;
     }
-    
+
     //Fill histograms
     for (int i = 0; i < nDir; i++){
       _hmap_Nevents[i]->Fill(0.0);
       _hmap_n_jets[i]->Fill(n_jets);
       _hmap_n_tau[i]->Fill(ntau_counter);
-      
+
       if (pass_cuts[i] == 1){
 	_hmap_Nevents[i]->Fill(1.0);
         if(Jet_leading_vec_tc.Pt() > 1.0){
@@ -424,7 +422,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       }
     }
   }// end entry loop for tau channel
-  
+
   theFile->cd();
   for (int d = 0; d < nDir; d++)
     {
@@ -458,14 +456,14 @@ PhenoAnalysis::~PhenoAnalysis()
 }
 
 double PhenoAnalysis::calculateE(double eta, double pt, double mass){
-  
+
   double theta = TMath::ATan(TMath::Exp(-eta));
   double sin_theta = TMath::Sin(2*theta);
   double p= pt/sin_theta;
   double e = sqrt(pow(p, 2) + pow(mass, 2));
-  
+
   return e;
-  
+
 }
 
 double PhenoAnalysis::normalizedDphi(double phi){
@@ -487,7 +485,7 @@ void PhenoAnalysis::crateHistoMasps (int directories)
       _hmap_slead_jet_pT[i]   = new TH1F("jet_slead_pT",    "p_{T} Sub-leading Jet", 200, 0., 2000.);
       _hmap_slead_jet_eta[i]  = new TH1F("jet_slead_eta",   "#eta Sub-leading Jet", 50, -5.0, 5.0);
       _hmap_slead_jet_phi[i]  = new TH1F("jet_slead_phi",   "#phi Sub-leading Jet", 70, -3.6, 3.6);
-      _hmap_n_jets[i]        = new TH1F("N_jets",         "N(jet)", 4, 0, 4);
+      _hmap_n_jets[i]        = new TH1F("N_jets",         "N(jet)", 4, 0, 6);
       _hmap_n_tau[i]         = new TH1F("N_taus",          "N(#tau)", 4, 0, 4);
       _hmap_tau1_pT[i]       = new TH1F("tau1_pT",        "p_{T}(#tau_{1})", 200, 0., 2000.);
       _hmap_tau1_eta[i]      = new TH1F("tau1_eta",       "#eta(#tau_{1})", 50, -3.5, 3.5);
