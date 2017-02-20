@@ -233,7 +233,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
           ntau_counter--;
         }
 
-        if(DR_tau2_jet < DR_jet_lep_max){
+        if(DR_tau3_jet < DR_jet_lep_max){
           Tau3HadTLV.SetPtEtaPhiE(0.,0.,0.,0.);
           ntau_counter--;
         }
