@@ -1,0 +1,181 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}%Encoding
+\usepackage{graphicx}% Incluye archivos de imagenes
+\usepackage{dcolumn}% Alinea tablas al punto decimal
+\usepackage{bm}% Bold math
+%\usepackage[spanish]{babel}%Definición de idioma
+%\usepackage{gensymb} %Generador de símbolos
+\usepackage{float} %Ajustar floats
+\usepackage{hhline}
+%\usepackage{bbding}
+%\newdate{date}{10}{05}{2013}
+%\date{\displaydate{date}}
+
+\begin{document}
+
+\begin{center}
+\Huge
+Estudio fenomenológico de neutrinos pesados en el LHC, a través de resonancias de alta masa, usando la técnica de fusión de bosones vectoriales 
+
+\vspace{3mm}
+\Large Carlos Miguel Patiño Paz
+
+\large
+201224993
+
+
+\vspace{2mm}
+\Large
+Director: Andrés Flórez
+
+\normalsize
+\vspace{2mm}
+
+\today
+\end{center}
+
+
+\normalsize
+\section{Introduction}
+
+The standard model (SM) gathers the entire understanding about fundamental particles and their interactions. Although the model has successfully explained various physical phenomena observed experimentally, there are still multiple unanswered questions concerning particle physics. For example, experiments \cite{Detectores} have shown that accelerator and reactor, solar, and atmospheric neutrinos have mass by proving the existence of neutrino oscillations. The fact that there are neutrino oscillations contradicts the SM, because the neutrinos are massless in the Standard Model. Some specific experiments for each neutrino category are: Super-Kamiokande \cite{Super-Kamiokande} for solar and atmospheric neutrino oscillations, KamLAND \cite{KamLAND} for reactor neutrinos and K2K \cite{K2K} and for accelerator neutrino oscillations \cite{Experimentos}. An additional open question about neutrinos is the fact that only neutrinos with left helicity have been observed. Helicity is defined as the projection of the particle's momentum vector over its spin direction. Only neutrinos with spin anti-parallel to its linear momentum have been observed.
+
+In order to provide neutrinos mass, several models that extend the prediction of the Standard Model have been proposed. On of the most known model is the "see-saw" or balance mechanism \cite{See-saw}. The see-saw mechanism includes three models that provide mass to neutrinos. If $\phi$ is the doublet associated with the SM Higgs Boson and $L_{l}$ the representation of a doublet field associated with the lepton number +1. In the type I see-saw mechanism the product between $L_{l}$ and $\phi$ results in a fermionic singlet state. In the type II see-saw mechanism, the product between the two elements forms a scalar triplet. Finally, the product between $L_{l}$ and $\phi$ results in a fermionic singlet state. Besides the see-saw mechanism, other models propose the existence of neutrinos with high mass and right helicity. If this kind of neutrinos is observed, the symmetry in the SM between left and right would be restored and the mechanism by which the neutrinos acquire mass would be explained. 
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Figures/Feynman_W.png}
+\caption{Feynman diagram of heavy neutrino production. (Taken from \cite{CMS ATLAS})}
+\label{fig: W}
+\end{figure}
+
+Heavy neutrinos searches have been conducted in experiments LEP \cite{LEP}, CMS y ATLAS \cite{CMS ATLAS}, but none of these collaborations has proved that heavy neutrinos exist. In order to understand heavy neutrino searches it is necessary to define the concept of jet. A jet at phenomenological level is defined as a quark or a gluon. In high energies experimental physics, a jet is defined as a collection of particles resulting from the fragmentation of quarks or gluons. Searches at CMS and ATLAS have focused in final states with associated leptons and jets. Figure \ref{fig: W} shows a Feynman diagram of the production of a heavy neutrino mediated by a W boson with left or right helicity. The final state for this process has two leptons ($\mu$ or $\tau$) and two jets.
+
+The main objective of this monograph is to perform a phenomenological study about the feasibility of conducting an experimental analysis for the detection of heavy neutrinos in the Large Hadron Collider (LHC) using a technique known as vector boson fusion (VBF). The search of new physics using VBF, has been used recently in the LHC \cite{VBF Search}. In high energy physics, the bosons $W^{\pm}$, $Z^{0}$ and $\gamma$ are known as vector bosons. The process of vector boson fusion occurs through an electroweak interaction of associated quarks with the LHC proton beams. In the analysis, the production of heavy neutrinos is considered through the decay of a high mass hypothetical resonance known as $Z^{'}$ (shown in the Feynman diagram of Figure \ref{fig: VBF}). This high mass resonance comes from the vector boson fusion process.  
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.65]{Figures/Feynman_VBF.JPG}
+\caption{Feynman diagram of VBF process.}
+\label{fig: VBF}
+\end{figure}
+
+The production of the heavy neutrino consists in the interaction of two quarks associated to the protons colliding in the beam. The protons emit vector bosons that produce a heavy resonance when they fuse. The heavy resonance decays afterwards producing the heavy neutrinos ($N_{l}$): $pp \rightarrow jj Z^{'} \rightarrow jj N_{l}N_{l}$.
+
+The VBF topology consists in requiring two highly energetic jets in the longitundinal region of the detector and in opposite hemispheres thereof. It has been shown that by requiring this type of event, the noise level (background) is reduced considerably in regions of difficult study in searches of new physics.
+
+
+\begin{equation}
+    S = \frac{N(s)}{\sqrt{N(s) + N(B)}}
+\end{equation}
+
+In order to conduct the analysis, it is important to simulate signal and background processes and to perform a detailed physical study of the variables that allow to distinguish signal for experimental noise. It is necessary to use a cuantitative estimator commonly known as figure of merit to determine optimal cuts in the mentioned variables. The latter with the objective of reducing the amount of experimental noise. Using this procedure the optimal cut in the variables is achieved, always looking to optimize the significance for each relevant variable in the analysis. For this particular analysis, the significance formula that will be used is the one shown in Equation 1, where $S$ is the significance, $N(s)$ is the number of signal events, and $N(B)$ is the number of background events. 
+
+Furthermore, it is important to establish the expected experimental sensitivity using maximum likelihood limits or the calculation of the final significance for different hypothetical signal points. 
+
+\section{General Objectives}
+
+Conduct a phenomenological study to determine the possible experimental sensitivity of heavy neutrino searches in the LHC, using the VBF topology, in channels with high-mass resonance production. 
+
+\section{Specific Objectives}
+
+\begin{itemize}
+	\item Develop the signal events and experimental noise simulations using MadGraph, Pythia, and Delphes software.
+	\item Write an analysis code using ROOT software to analyze the simulated data.
+	\item Conduct a physical study of the appropiate cinematic and topological variables that show strong separation between signal and background.
+	\item Find the optimal cut points of the relevant physical variables using a significance figure.
+    \item Conduct a statical analysis of the results.
+\end{itemize}
+
+\section{Methodology}
+
+The project requires computational work, because simulations of events from the different processes are needed. Also, an analysis of the samples using the analysis code is required. The background and signal samples will be simulated using the software MadGraph \cite{MadGraph}, Pythia \cite{Pythia} and Delphes \cite{Delphes}. The data analysis and all the subsequent cinematic variables and optimal cuts analyses will be performed using ROOT software \cite{ROOT}.
+
+Pythia is a software that allows the simulation of various strong processes models that evolve from a few bodies to final states with high particle multiplicity. Particularly, in this case Pythia will be used for the simulation of quark and gluon fragmentation processes. This fragmentation process occurs when, due to and intrinsic characteristic of the strong interaction, there is an energy increase caused by the increase of the distance of two bound quarks. If the separation is enough to reach a critical energy, a pair quark-antiquark is created. The Pythia is simulation is necessary, because processes like the ones mentioned above occur during a proton collision at the LHC.
+
+MadGraph software is an event generator that allows the simulation of collision between two particle beams. For this analysis in particular, the simulations will consist in proton collision at 13 TeV in order to reproduce the actual conditions of the LHC. MadGraph includes the physical parameters that determine the production probability of a given process, as well as the possible decays that the initial simulated particles suffer. Besides providing the necessary matrices to calculate the cross sections of the processes, MadGraph also creates the pictorial representations of the Feynman Diagrams from the generated processes. To this end, the software uses perturbation theory in the calculations of production and generation of physical processes. 
+
+Delphes is a software used to add the effects that a multipurpose, like ATLAS or CMS, may have on the particles to the Monte Carlo simulations performed for different processes. In this pareticular case, Delphes is necessary to simulate the interaction of the particles coming from the generated processes in MadGraph and Pythia with the CMS components. Namely, reproducing the conditions of the detector and the uncertainties coming from the measuring process are achieved by using Delphes. The changes in the cinematic variables due to their interaction with matter, errors caused by the electronics of the detector, and the additional particles generated because of the interaction between the particles and the detector components can be accounted for using Delphes. Other functionalities included in Delphes are: simulation of the detector geometry, the effect of the magnetic field over the particles, and the particle identification and reconstruction efficiencies, among others. 
+
+ROOT is a software library developed by CERN to perform data analyses related eith particle physics. On the main characteristics of this library is the possibility of handling large volumes of data efficiently. The latter is achieved using a tree structure in which the information related with the particles is stored and can be accessed easily using ROOT functionalities. Other features included in the library are the creation of histograms from data trees, multivariate analysis, four-vector calculations, among others. Using ROOT functionalities, it is also possible to estimate optimal cuts in variables to reduce experimental noise to its minimum. This is why the entire final analysis will involve using tools provided by ROOT.
+
+\section{MadGraph Simulation}
+
+The MadGraph simulation was performed assuming the mass of the heavy neutrino was 1.5 TeV. Also, taking into the account that the analysis was going to be performed using Vector Boson Fusion, the paramater of minimum pseudorapidity ($\eta$) separation between two jets for WBF process was set to 3.5.
+
+The commands used to generate the desired signal were the ones shown in Figure
+
+The first command imports the theoretical model that includes the interactions of the heavy neutrino. The next command specifies the processes that are going to be simulated. pp $>$ n3 ta+ jj stands por the proton-proton collision that decays into a heavy neutrino, a $\tau$ with positive charge, and two jets. The flag QCD=0 is used to exclude all strong interactions that can be involved in the process. Finally, n3 $>$ ta+ jj is used to force the decay of the heavy neutrino into a $\tau$ charge positively and two jets. The subsequent commands are used to take into account all the possible combinations of the electrical charge that the $\tau$ may have.
+
+Figures \ref{fig: hnZ} and \ref{fig: hnGamma} show two of the main possible diagrams generated by MadGraph for the processes simulated. This two diagrams present a complete picture involving the processes shown in the diagrams of Figures \ref{fig: VBF} and \ref{fig: W}. Figure \ref{fig: VBF} shows the diagram of the vector boson fusion process, ocurring in Figures \ref{fig: hnZ} and \ref{fig: hnGamma} in the fusion of the W boson with the Z boson and the photon ($\gamma$) respectively. In these last two diagrams, the decay of the of the W boson coincides with the one shown in Figure \ref{fig: W} for the decay of the W boson resulting in a heavy neutrino and a lepton, which in this case is a $\tau$. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.45]{Figures/Feynman_hnZ.png}
+\caption{Feynman diagram of simulated process involving Z boson}
+\label{fig: hnZ}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.45]{Figures/Feynman_hnGamma.png}
+\caption{Feynman diagram of simulated process involving photon}
+\label{fig: hnGamma}
+\end{figure}
+
+\section{Results}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.45]{Figures/Feynman_hnGamma.png}
+\caption{Feynman diagram of simulated process involving photon}
+\label{fig: hnGamma}
+\end{figure}
+
+
+
+
+
+\begin{thebibliography}{10}
+
+\bibitem {Detectores}Particle Data Group, Olive, K. A. et al. , Chin.Phys. C38, 090001 (2014)
+
+
+\bibitem{Super-Kamiokande} Fukuda, S. et al. (2003) Nuclear Instruments and Methods in Physics Research A 501 (2003) 418–462
+
+\bibitem{KamLAND} Decowski, M. (2016). KamLAND's precision neutrino oscillation measurements. Nuclear Physics B, 908, pp.52-61.
+
+\bibitem{K2K} K2K Collaboration: Aliu, E. et al (2005). Evidence for Muon Neutrino Oscillation in an Accelerator-Based Experiment. Physical Review Letters, 94(8).
+
+\bibitem {Experimentos}Nakamura, K. et al. (2010) (Particle Data Group), J. Phys. G 37, 075021 (2010) 
+
+\bibitem {See-saw} Deppisch, F., Bhupal Dev, P., \& Pilaftsis, A. (2015). Neutrinos and collider physics. New Journal Of Physics, 17(7), 075019. http://dx.doi.org/10.1088/1367-2630/17/7/075019
+
+\bibitem {LEP} Abdesslam, A. et al. (2014) Type II Seesaw Higgsology and LEP/LHC constraints. arXiv:1411.5645 [hep-ph]
+
+\bibitem {CMS ATLAS} Khachatryan, V., Sirunyan, A., Tumasyan, A., Adam, W., Asilar, E., \& Bergauer, T. et al. (2016). Search for heavy Majorana neutrinos in $e\pm e\pm +$ jets and $e\pm$ $\mu \pm +$ jets events in proton-proton collisions at s = 8 $\sqrt{s}=8$ TeV. Journal Of High Energy Physics, 2016(4).
+
+\bibitem {VBF Search} Brooke, J., Buckley, M., Dunne, P., Penning, B., Tamanas, J., \& Zgubič, M. (2016). Vector boson fusion searches for dark matter at the LHC. Physical Review D, 93(11). http://dx.doi.org/10.1103/physrevd.93.113013
+
+\bibitem{MadGraph} Alwall, J., Herquet, M., Maltoni, F., Mattelaer, O., \& Stelzer, T. (2011). MadGraph 5: going beyond. Journal Of High Energy Physics, 2011(6). http://dx.doi.org/10.1007/jhep06(2011)128
+
+\bibitem{Pythia}Sjöstrand, T., Ask, S., Christiansen, J., Corke, R., Desai, N., \& Ilten, P. et al. (2015). An introduction to PYTHIA 8.2. Computer Physics Communications, 191, 159-177. http://dx.doi.org/10.1016/j.cpc.2015.01.024
+
+\bibitem{Delphes} de Favereau, J., Delaere, C., Demin, P., Giammanco, A., Lemaître, V., Mertens, A., \& Selvaggi, M. (2014). DELPHES 3: a modular framework for fast simulation of a generic collider experiment. Journal Of High Energy Physics, 2014(2). http://dx.doi.org/10.1007/jhep02(2014)057
+
+\bibitem{ROOT} Antcheva, I., Ballintijn, M., Bellenot, B., Biskup, M., Brun, R., \& Buncic, N. et al. (2009). ROOT — A C++ framework for petabyte data storage, statistical analysis and visualization.
+
+\end{thebibliography}
+
+\vspace{1.5cm}
+
+\section*{Firma del Director}
+\vspace{1.5cm}
+
+\section*{Firma del Estudiante	}
+
+
+
+\end{document} 
