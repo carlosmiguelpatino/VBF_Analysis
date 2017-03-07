@@ -131,7 +131,7 @@ Figures \ref{fig: hnZ} and \ref{fig: hnGamma} show two of the main possible diag
 
 The transverse momentum or $p_{T}$, is defined as the momentum component that a particle has in the plane perpendicular to the beam line. In the coordinate system of the LHC, this plane corresponds to the $x-y$ plane.
 
-The variable related with the polar angle in the LHC is called pseudorapidity, or $\eta$, defined as in Equation \ref{eq: eta}. The use of this variable is justified for mainly two reasons. The first one is that $\Delta \eta$, contrary to $\Delta \theta$, is a Lorentz invariant. This makes $\Delta \eta$ a more natural variable than $\Delta \theta$ for relativistic calculations. The second reason is that the distribution of the values of $\eta$ in barrel region, where the multiplicity of particle is less than in the end-caps, is wider allowing the $\eta$ particle distribution to be aproximately constant.
+The variable related with the polar angle in the LHC is called pseudorapidity, or $\eta$, defined as in Equation \ref{eq: eta}. 
 
 \begin{equation}
  \eta = -\ln\left[\tan\left(\frac{\theta}{2}\right)\right]
