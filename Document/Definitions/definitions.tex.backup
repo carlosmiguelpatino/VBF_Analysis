@@ -11,11 +11,9 @@ The variable related with the polar angle in the LHC is called pseudorapidity, o
  \label{eq: eta}
 \end{equation}
 
+In the preliminary analysis of the variable distributions shape using normalized to the unit plots, i.e. the area under the distribution for the distribution is equal to one, a separation between signal and background was achieved in the transverse momentum variable of both jets and taus. However, in distribution involving all the cuts considered fothe analysis, the separation noticeable but considerably smaller. The separation between background and signal was bigger for the tau transverse momentum $p_{T}(\tau)$ than the one shown by both leading and sub-leading jets.
 
-
-In each event, the two jets that resulted in the greatest mass combination was stored and defined as the Di-Jet Pair. The jet with greater momentum in the Di-Jet Pair is the leading jet and the other one in the pair is the sub-leading jet. Another variable defined regarding the Di-Jet Pair was the Di-Jet mass and corresponds to the sum of the masses from the jets in the Di-Jet Pair. 
-
-With the idea of exploiting the possible difference between signal and background in the $p_{T}$ varibles, two new variables shown in Equations \ref{eq: HT} and \ref{eq: ST} were defined to check for possible further separation between signal and background. As shown in equation \ref{eq: HT}, the $H_{T}$ variable is defined as the scalar sum of the jets with $p_{T}$ greater than 30 GeV and $|\eta| < 5$ that are not B-jets. $S_{T}$ is defined as the scalar sum of jets that fullfilll the same conditions of $H_{T}$, added to the $p_{T}$ of the $\tau$'s in the event.
+With the idea of exploiting the small but existent different between signal and background in the $p_{T}$ varibles, two new variables shown in Equations \ref{eq: HT} and \ref{eq: ST} were created to check for possible further separation between signal and background. As shown in equation \ref{eq: HT}, the $H_{T}$ variable is defined as the scalar sum of the jets with $p_{T}$ greater than 30 GeV and $|\eta| < 5$ that are not B-jets. $S_{T}$ is defined as the scalar sum of jets that fullfilll the same conditions of $H_{T}$, added to the $p_{T}$ of the $\tau$'s in the event.
 
 Since the $\tau$ selection is important for this analysis, it is relevant to provide a further description of the selection criteria for the $\tau$'s in the simulated events. For starters, a jet identified as a tau is considered a valid $\tau$ if it has minimum a transverse momentum of 10 GeV. Also, it was required that a valid $\tau$ should not overlap with an electron or a muon. That is, the $\Delta R$, defined as $\Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}$ should not be less than 0.3. This condition guarantees that the jet identified as a $\tau$ does not overlap with other leptons. Other condition required for a valid $\tau$ is that the jet has a minimum transverse momentum of 20 GeV. Since the final state for this analysis includes two $tau$'s, the two taus with greater $p_{T}$ are selected among a maximum of three taus stored for each event. The leading $\tau$ is the one with highest $p_{T}$ and the sub-leading $\tau$ is the one with second highest $p_{T}$.
 
@@ -28,8 +26,6 @@ Since the $\tau$ selection is important for this analysis, it is relevant to pro
  S_{T} = \sum_{i=1}^{n} p_{T}(jet_{i}) + \sum_{j=1}^{m} p_{T}(\tau_{j})
  \label{eq: ST}
 \end{equation}
-
-
 
 \section{Cut Definitions}
 
