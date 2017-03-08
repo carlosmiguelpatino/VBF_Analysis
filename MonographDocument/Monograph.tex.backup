@@ -4,7 +4,7 @@
 \usepackage{graphicx}% Incluye archivos de imagenes
 \usepackage{dcolumn}% Alinea tablas al punto decimal
 \usepackage{bm}% Bold math
-\usepackage[english]{babel}%Definición de idioma
+\usepackage[spanish]{babel}%Definición de idioma
 %\usepackage{gensymb} %Generador de símbolos
 \usepackage{float} %Ajustar floats
 \usepackage{hhline}
@@ -16,7 +16,7 @@
 
 \begin{center}
 \Huge
-Phenomenological Study of Heavy Neutrinos at the LHC, through High-mass Resonance, using the Vector Boson Fusion Technique
+Estudio fenomenológico de neutrinos pesados en el LHC, a través de resonancias de alta masa, usando la técnica de fusión de bosones vectoriales 
 
 \vspace{3mm}
 \Large Carlos Miguel Patiño Paz
@@ -39,9 +39,9 @@ Director: Andrés Flórez
 \normalsize
 \section{Introduction}
 
-The standard model (SM) gathers the entire understanding about fundamental particles and their interactions. Although the model has successfully explained various physical phenomena observed experimentally, there are still multiple unanswered questions concerning particle physics. For example, experiments \cite{Detectores} have shown that accelerator and reactor, solar, and atmospheric neutrinos have mass by proving the existence of neutrino oscillations. The fact that there are neutrino oscillations contradicts the SM, because the neutrinos are massless in the Standard Model. Some specific experiments for each neutrino category are: Super-Kamiokande \cite{Super-Kamiokande} for solar and atmospheric neutrino oscillations, KamLAND \cite{KamLAND} for reactor neutrinos, and K2K \cite{K2K} for accelerator neutrino oscillations \cite{Experimentos}. An additional open question about neutrinos is the fact that only neutrinos with left helicity have been observed. Helicity is defined as the projection of the particle's momentum vector over its spin direction. Only neutrinos with spin anti-parallel to its linear momentum have been observed.
+The standard model (SM) gathers the entire understanding about fundamental particles and their interactions. Although the model has successfully explained various physical phenomena observed experimentally, there are still multiple unanswered questions concerning particle physics. For example, experiments \cite{Detectores} have shown that accelerator and reactor, solar, and atmospheric neutrinos have mass by proving the existence of neutrino oscillations. The fact that there are neutrino oscillations contradicts the SM, because the neutrinos are massless in the Standard Model. Some specific experiments for each neutrino category are: Super-Kamiokande \cite{Super-Kamiokande} for solar and atmospheric neutrino oscillations, KamLAND \cite{KamLAND} for reactor neutrinos and K2K \cite{K2K} and for accelerator neutrino oscillations \cite{Experimentos}. An additional open question about neutrinos is the fact that only neutrinos with left helicity have been observed. Helicity is defined as the projection of the particle's momentum vector over its spin direction. Only neutrinos with spin anti-parallel to its linear momentum have been observed.
 
-In order to provide neutrinos with mass, several models that extend the predictions of the Standard Model have been proposed. One of the most known model is the "see-saw" or balance mechanism \cite{See-saw}. The see-saw mechanism includes three models that provide mass to neutrinos. For this model, $\phi$ is the doublet associated with the SM Higgs Boson and $L_{l}$ the representation of a doublet field associated with the lepton number +1. In the type I see-saw mechanism the product between $L_{l}$ and $\phi$ results in a fermionic singlet state. In the type II see-saw mechanism, the product between the two elements forms a scalar triplet. Finally, the product between $L_{l}$ and $\phi$ results in a fermionic singlet state. Besides the see-saw mechanism, other models propose the existence of neutrinos with high mass and right helicity. If this kind of neutrinos are observed, the left and right symmetry in the SM would be restored and the mechanism by which the neutrinos acquire mass would be explained. 
+In order to provide neutrinos mass, several models that extend the prediction of the Standard Model have been proposed. On of the most known model is the "see-saw" or balance mechanism \cite{See-saw}. The see-saw mechanism includes three models that provide mass to neutrinos. If $\phi$ is the doublet associated with the SM Higgs Boson and $L_{l}$ the representation of a doublet field associated with the lepton number +1. In the type I see-saw mechanism the product between $L_{l}$ and $\phi$ results in a fermionic singlet state. In the type II see-saw mechanism, the product between the two elements forms a scalar triplet. Finally, the product between $L_{l}$ and $\phi$ results in a fermionic singlet state. Besides the see-saw mechanism, other models propose the existence of neutrinos with high mass and right helicity. If this kind of neutrinos is observed, the symmetry in the SM between left and right would be restored and the mechanism by which the neutrinos acquire mass would be explained. 
 
 
 \begin{figure}[H]
@@ -101,7 +101,7 @@ Delphes is a software used to add the effects that a multipurpose, like ATLAS or
 
 ROOT is a software library developed by CERN to perform data analyses related eith particle physics. On the main characteristics of this library is the possibility of handling large volumes of data efficiently. The latter is achieved using a tree structure in which the information related with the particles is stored and can be accessed easily using ROOT functionalities. Other features included in the library are the creation of histograms from data trees, multivariate analysis, four-vector calculations, among others. Using ROOT functionalities, it is also possible to estimate optimal cuts in variables to reduce experimental noise to its minimum. This is why the entire final analysis will involve using tools provided by ROOT.
 
-\section{MadGraph Simulation} \label{sec: mgsim}
+\section{MadGraph Simulation}
 
 The MadGraph simulation was performed assuming the mass of the heavy neutrino was 1.5 TeV. Also, taking into the account that the analysis was going to be performed using Vector Boson Fusion, the paramater of minimum pseudorapidity ($\eta$) separation between two jets for WBF process was set to 3.5.
 
@@ -125,7 +125,7 @@ Figures \ref{fig: hnZ} and \ref{fig: hnGamma} show two of the main possible diag
 \label{fig: hnGamma}
 \end{figure}
 
-\section{Definitions} \label{sec:definitions}
+\section{Definitions}
 
 \subsection{Variable Definitions}
 
@@ -142,7 +142,7 @@ In the preliminary analysis of the variable distributions shape using normalized
 
 With the idea of exploiting the small but existent different between signal and background in the $p_{T}$ varibles, two new variables shown in Equations \ref{eq: HT} and \ref{eq: ST} were created to check for possible further separation between signal and background. As shown in equation \ref{eq: HT}, the $H_{T}$ variable is defined as the scalar sum of the jets with $p_{T}$ greater than 30 GeV and $|\eta| < 5$ that are not B-jets. $S_{T}$ is defined as the scalar sum of jets that fullfilll the same conditions of $H_{T}$, added to the $p_{T}$ of the $\tau$'s in the event. 
 
-Since the $\tau$ selection is important for this analysis, it is relevant to provide a further description of the selection criteria for the $\tau$'s in the simulated events. For starters, a jet identified as a tau is considered a valid $\tau$ if it has minimum a transverse momentum of 20 GeV. Also, it was required that a valid $\tau$ should not overlap with an electron or a muon. That is, the $\Delta R$, defined as $\Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}$ should not be less than 0.3. This condition guarantees that the jet identified as a $\tau$ does not overlap with other leptons. Other condition required for a valid $\tau$ is that the jet has a minimum transverse momentum of 20 GeV. Since the final state for this analysis includes two $tau$'s, the two taus with greater $p_{T}$ are selected among a maximum of three taus stored for each event. The leading $\tau$ is the one with highest $p_{T}$ and the sub-leading $\tau$ is the one with second highest $p_{T}$.    
+Since the $\tau$ selection is important for this analysis, it is relevant to provide a further description of the selection criteria for the $\tau$'s in the simulated events. For starters, a jet identified as a tau is considered a valid $\tau$ if it has minimum a transverse momentum of 20 GeV. Also, it was required that a valid $\tau$ should not overlap with an electron or a muon. That is, the $\Delta R$, defined as $\Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}$ should not be less than 0.3.
 
 \begin{equation}
  H_{T} = \sum_{i=1}^{n} p_{T}(jet_{i})
@@ -150,36 +150,18 @@ Since the $\tau$ selection is important for this analysis, it is relevant to pro
 \end{equation}
 
 \begin{equation}
- S_{T} = \sum_{i=1}^{n} p_{T}(jet_{i}) + \sum_{j=1}^{m} p_{T}(\tau_{j})
+ S_{T} = \sum_{k=1}^{n} p_{T}(jet_{k}) + \sum_{l=1}^{m} p_{T}(\tau_{l})
  \label{eq: ST}
 \end{equation}
 
-\section{Results} \label{sec:results}
-
-As mentioned in section \ref{sec:definitions}, the variables $H_{T}$ and $S_{T}$ were defined to achieve a greater separation between background and signal. Figures \ref{fig: HTunitNC} and \ref{fig: STunitNC} show normalized to the unity plots with no additional cuts in the variables. The plots in both figures show that a separation between signal and background is achieved for values greater than 500 GeV for both $H_{T}$ and $S_{T}$. 
-
-
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale = 0.7]{Figures/HT_unitNoCuts}
-\caption{Unit plot of $H_{T}$ with no cuts}
-\label{fig: HTunitNC}
+\includegraphics[scale = 0.45]{Figures/Feynman_hnGamma}
+\caption{Feynman diagram of simulated process involving photon}
+\label{fig: hnGamma}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale = 0.7]{Figures/ST_unitNoCuts}
-\caption{Unit plot of $S_{T}$ with no cuts}
-\label{fig: STunitNC}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale = 0.7]{Figures/tau1_pT_unitNoCuts}
-\caption{Unit plot of $p_{T}$ from the leading $\tau$ with no cuts}
-\label{fig: tau1pTunitNC}
-\end{figure}
 
 
 
