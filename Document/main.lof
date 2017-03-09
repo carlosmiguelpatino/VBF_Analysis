@@ -1,15 +1,17 @@
 \select@language {english}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Feynman diagram of heavy neutrino production. (Taken from \cite {CMS ATLAS})}}{2}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Feynman diagram of VBF process.}}{3}{figure.1.2}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Feynman diagram of heavy neutrino production. (Taken from \cite {CMS ATLAS})\relax }}{3}{figure.caption.4}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Feynman diagram of VBF process.\relax }}{4}{figure.caption.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces MadGraph commands used to generate signal}}{9}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Feynman diagram of simulated process involving Z boson}}{10}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Feynman diagram of simulated process involving photon}}{11}{figure.4.3}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces MadGraph commands used to generate signal\relax }}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Feynman diagram of simulated process involving Z boson\relax }}{10}{figure.caption.7}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Feynman diagram of simulated process involving photon\relax }}{11}{figure.caption.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Unit plot of $H_{T}$ with no cuts}}{18}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Unit plot of $S_{T}$ with no cuts}}{19}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Unit plot of $p_{T}$ from the leading $\tau $ with no cuts}}{20}{figure.6.3}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Unit plot of $\eta $ from the sub-leading $\tau $ with no cuts\relax }}{16}{figure.caption.9}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Unit plot of $p_{T}$ of leading $\tau $ with no cuts\relax }}{17}{figure.caption.10}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces $p_T$ unit plots for different bodies in the event}}{18}{figure.caption.11}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Unit plot of $H_{T}$ with no cuts\relax }}{19}{figure.caption.12}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Unit plot of $S_{T}$ with no cuts\relax }}{20}{figure.caption.13}

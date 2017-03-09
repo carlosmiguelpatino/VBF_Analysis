@@ -1,6 +1,6 @@
 %Plantilla basada en "Template for Masters / Doctoral Thesis" (plantilla disponible en writeLaTex) que subió LaTeXTemplates.com
 
-\documentclass[11pt]{book}
+\documentclass[11pt, oneside]{book}
 \usepackage[paperwidth=17cm, paperheight=22.5cm, bottom=2.5cm, right=2.5cm]{geometry}
 \usepackage{amssymb,amsmath,amsthm} %paquete para símbolo matemáticos
 \usepackage[english]{babel}
@@ -9,8 +9,10 @@
 \usepackage{hhline}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{subcaption}
 %\usepackage{subfig} %para poner subfiguras
-\graphicspath{{Img/}} %En qué carpeta están las imágenes
+%\usepackage{subcaption}
+\graphicspath{{Figures/}{Figures/Plots}} %En qué carpeta están las imágenes
 %\usepackage[nottoc]{tocbibind}
 \usepackage[pdftex,
             pdfauthor={Carlos Miguel Patiño},
@@ -58,7 +60,7 @@
 \begin{titlepage}
 \begin{center}
 
-\textsc{\Large Universidad de los Andes}\\[4em]
+\textsc{\Large Universidad de los Andes}\\[3em]
 
 \textsc{\large Faculty of Science}\\[1em]
 
@@ -71,7 +73,7 @@
 \end{center}
 \end{figure}
 
-\vspace{4em}
+\vspace{0.5em}
 
 \textsc{\huge \textbf{Phenomenological Study of Heavy Neutrinos at the LHC, through high mass resonances, using the vector boson fusion technique}}\\[4em]
 
@@ -132,7 +134,7 @@
 %----------------------------------------------------------------------------------------
 
 %\pagestyle{empty}
-%\frontmatter
+\frontmatter
 
 %\chapter*{}
 %\begin{flushright}

@@ -1,6 +1,6 @@
 \chapter{Signal Simulation} \label{sec: mgsim}
 
-The MadGraph signal simulation was performed assuming the mass of the heavy neutrino was 1.5 TeV. Also, taking into the account that the analysis was going to be performed using Vector Boson Fusion, the paramater of minimum pseudorapidity ($\eta$) separation between two jets for WBF process was set to 3.5.
+The MadGraph signal simulation was performed assuming that the mass of the heavy neutrino was 1.5 TeV. Also, taking into the account that the analysis was going to be performed using Vector Boson Fusion, the paramater of minimum pseudorapidity separation ($\Delta \eta$) between two jets was set to 3.5.
 
 The commands used to generate the desired signal were the ones shown in Figure \ref{fig: mgCommands}.
 
@@ -11,7 +11,7 @@ The commands used to generate the desired signal were the ones shown in Figure \
 \label{fig: mgCommands}
 \end{figure}
 
-The first command imports the theoretical model that includes the interactions of the heavy neutrino. The next command specifies the processes that are going to be simulated. pp $>$ n3 ta+ jj stands por the proton-proton collision that decays into a heavy neutrino, a $\tau$ with positive charge, and two jets. The flag QCD=0 is used to exclude all strong interactions that can be involved in the process. Finally, n3 $>$ ta+ jj is used to force the decay of the heavy neutrino into a $\tau$ charge positively and two jets. The subsequent commands are used to take into account all the possible combinations of the electrical charge that the $\tau$ may have.
+The first command imports the theoretical model that includes the interactions related with the heavy neutrino formation and decay. The next command specifies the processes that are going to be simulated. pp $>$ n3 ta+ jj stands por the proton-proton collision that decays into a heavy neutrino, a $\tau$ with positive charge, and two jets. The flag QCD=0 is used to exclude all strong interactions that can be involved in the process. Finally, n3 $>$ ta+ jj is used to force the decay of the heavy neutrino into a $\tau$ charge positively and two jets. The subsequent commands are used to take into account all the possible combinations of the electrical charge that the $\tau$ may have.
 
 \begin{figure}[H]
 \centering
@@ -29,5 +29,5 @@ Figures \ref{fig: hnZ} and \ref{fig: hnGamma} show two of the main possible diag
 \label{fig: hnGamma}
 \end{figure}
 
-The simulation was performed in 10 different simulation of batches of 10,000 events each. Each batch was generated with a different random seed to guarantee the independence of the events between each the generated batches. This independance was necessary because the 10,000 event files were merged to form a single file with 100,000 events. As explained earlier, after the events were simulated in MadGraph they were passed to Pythia and then to Delphes so the signal resembled one that could be found at CMS.  
+The simulation was performed in 10 different simulation batches each one containing 10,000 events. Every batch was generated with a different random seed to guarantee the independence of the events between each one of the generated batches. This independance was necessary because the 10,000 event files were merged to form a single file with 100,000 events. As explained earlier, after the events were simulated in MadGraph they were passed to Pythia and then to Delphes so the signal resembled one that could be found at CMS.  
 
