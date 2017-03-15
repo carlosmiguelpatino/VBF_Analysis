@@ -6,14 +6,14 @@ The normalized plots are useful to check the shape of backgrounds and signal dis
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1.2\linewidth]{Figures/Plots/tau2_eta_unitNoCuts.pdf}
+\includegraphics[width=\linewidth]{Figures/Plots/tau2_eta_unitNC.pdf}
 \caption{Unit plot of $\eta$ from the sub-leading $\tau$ with no cuts}
 \label{fig: tau2etaunitNC}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=1.2\linewidth]{Figures/Plots/tau1_pt_unitNoCuts.pdf}
+\includegraphics[width=\linewidth]{Figures/Plots/tau1_pt_unitNC.pdf}
 \caption{Unit plot of $p_{T}$ of leading $\tau$ with no cuts}
 \label{fig: tau1ptunitNC}
 \end{figure}
@@ -24,7 +24,7 @@ To understand the definition of $H_{T}$ and $S_{T}$ mentioned in chapter \ref{se
         \centering
         \begin{subfigure}[b]{0.475\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{Figures/Plots/ljet_pt_unitNoCuts}
+            \includegraphics[width=\textwidth]{Figures/Plots/ljet_pt_unitNC}
             \caption[]%
             {{\small Leading jet $p_{T}$ unit plot}}    
             %\label{fig:mean and std of net14}
@@ -32,7 +32,7 @@ To understand the definition of $H_{T}$ and $S_{T}$ mentioned in chapter \ref{se
         \hfill
         \begin{subfigure}[b]{0.475\textwidth}  
             \centering 
-            \includegraphics[width=\textwidth]{Figures/Plots/sjet_pt_unitNoCuts}
+            \includegraphics[width=\textwidth]{Figures/Plots/sjet_pt_unitNC}
             \caption[]%
             {{\small Sub-leading jet $p_{T}$ unit plot}}    
             %\label{fig:mean and std of net24}
@@ -40,7 +40,7 @@ To understand the definition of $H_{T}$ and $S_{T}$ mentioned in chapter \ref{se
         \vskip\baselineskip
         \begin{subfigure}[b]{0.475\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{Figures/Plots/tau1_pt_unitNoCuts}
+            \includegraphics[width=\textwidth]{Figures/Plots/tau1_pt_unitNC}
             \caption[]%
             {{\small Leading $\tau$ $p_{T}$ unit plot}}    
             %\label{fig:mean and std of net34}
@@ -48,7 +48,7 @@ To understand the definition of $H_{T}$ and $S_{T}$ mentioned in chapter \ref{se
         \quad
         \begin{subfigure}[b]{0.475\textwidth}   
             \centering 
-            \includegraphics[width=\textwidth]{Figures/Plots/tau2_pt_unitNoCuts}
+            \includegraphics[width=\textwidth]{Figures/Plots/tau2_pt_unitNC}
             \caption[]%
             {{\small Sub-leading $\tau$ $p_{T}$ unit plot}}    
             %\label{fig:mean and std of net44}
@@ -58,21 +58,40 @@ To understand the definition of $H_{T}$ and $S_{T}$ mentioned in chapter \ref{se
          \label{fig: ptUnitPlots}
 \end{figure}
 
-In Figures \ref{fig: HTunitNC} andn \ref{fig: STunitNC}, the normalized plots with no cuts of $H_{T}$ and $S_{T}$ are shown. It can be seen that indeed a greater separation between signal and background was achieved. Unlike the distributions of the $\tau$'s and jets transverse momentum, the maxima of $H_{T}$ and $S_{T}$ lie outside the backgrounds distributions. Furthermore, the background that overlaps at a greater energy with the signal corresponds to $t\bar{t}$. Taking into account what was mentioned in section \ref{sec: cutdefinitions}, the overlap between the signal and this background could be reduced with the cut related with the number of B-jets in the event. This is why this two variables need to be studied closer in the analysis.
+In Figures \ref{fig: HTunitNC} and \ref{fig: STunitNC}, the normalized plots with no cuts of $H_{T}$ and $S_{T}$ are shown. It can be seen that indeed a greater separation between signal and background was achieved. Unlike the distributions of the $\tau$'s and jets transverse momentum, the maxima of $H_{T}$ and $S_{T}$ lie outside the backgrounds distributions. Furthermore, the background that overlaps at a greater energy with the signal corresponds to $t\bar{t}$. Taking into account what was mentioned in section \ref{sec: cutdefinitions}, the overlap between the signal and this background could be reduced with the cut related with the number of B-jets in the event. This is why this two variables need to be studied closer in the analysis.
 
 \begin{figure}
-\centering
-\includegraphics[width=1.2\linewidth]{Figures/Plots/HT_unitNoCuts.pdf}
+\includegraphics[width=\linewidth]{Figures/Plots/HT_unitNC.pdf}
 \caption{Unit plot of $H_{T}$ with no cuts}
 \label{fig: HTunitNC}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=1.2\linewidth]{Figures/Plots/ST_unitNoCuts.pdf}
+\includegraphics[width=\linewidth]{Figures/Plots/ST_unitNC.pdf}
 \caption{Unit plot of $S_{T}$ with no cuts}
 \label{fig: STunitNC}
 \end{figure}
+
+In Figures \ref{fig: HTunitVBF} and \ref{fig: STunitVBF}, the plots of $H_{T}$ and $S_{T}$ respectively are shown. Both plots include all the cuts mentioned in section \ref{sec: cutdefinitions}. A rebining of the histograms was necessary, because due to the cuts, the number of backgrounds events decreased significantly. This made the error bars for these histograms larger increase making the analysis of the plot more difficult. For that reason, a bin size of 400 GeV was defined for both of these plots. Comparing the two signal histograms, it can be seen that the maximum of the $H_{T}$ distribution still overlaps with the background distributions. Although the signal in this case appears on top of the background, it has to be noted that this normalized plots are only useful to get an idea of the distribution shapes. That is why the fact the the signal appears on top of the background does not mean that the signal can be detected over the background for this value. On the contrary, the maximum of the $S_{T}$ signal distribution has its maximum when the background distributions start to decay. This distribution shape  difference between $H_{T}$ and $S_{T}$ is related with the fact that the signal has $\tau$'s with higher $p_{T}$ than the ones found in the backgrounds.
+
+\begin{figure}
+\begin{center}
+ \includegraphics[width=\linewidth]{Figures/Plots/HT_unitVBF.pdf}
+\end{center}
+\caption{Unit plot of $H_{T}$ with VBF cuts}
+\label{fig: HTunitVBF}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{Figures/Plots/ST_unitVBF.pdf}
+\caption{Unit plot of $S_{T}$ with VBF cuts}
+\label{fig: STunitVBF}
+\end{figure}
+
+The mean values for $S_{T}$ shown in Figures \ref{fig: STunitNC} and \ref{fig: STunitVBF} are 915 GeV and 1160 GeV respectively. From the Feynman diagram in Figure \ref{fig: hnGamma}, it can be seen that the jets in the event an one of the taus come from the heavy neutrino decay. Taking into account that the defined mass for the heavy neutrino is 1.5 TeV, it is expected that the maximum of the $S_{T}$ distribution is around this value. This analysis leads to the conclusion that the cuts made to the histograms are helping to select the significant events, because the mean $S_{T}$ is closer to the expected value after performing all the cuts.
+
 
 
 

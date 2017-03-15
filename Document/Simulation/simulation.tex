@@ -2,14 +2,16 @@
 
 The MadGraph signal simulation was performed assuming that the mass of the heavy neutrino was 1.5 TeV. Also, taking into the account that the analysis was going to be performed using Vector Boson Fusion, the paramater of minimum pseudorapidity separation ($\Delta \eta$) between two jets was set to 3.5.
 
-The commands used to generate the desired signal were the ones shown in Figure \ref{fig: mgCommands}.
+The commands used to generate the desired signal were the following:
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale = 1]{Figures/mg_commands}
-\caption{MadGraph commands used to generate signal}
-\label{fig: mgCommands}
-\end{figure}
+\begin{itemize}
+\item import model SM\_HeavyN\_NLO
+\item generate p p $>$ n3 ta+ jj, QCD= 0, n3 $>$ ta+ jj
+\item add process p p $>$ n3 ta+ jj, QCD= 0, n3 $>$ ta- jj
+\item add process p p $>$ n3 ta- jj, QCD= 0, n3 $>$ ta- jj
+\item add process p p $>$ n3 ta- jj, QCD= 0, n3 $>$ ta+ jj
+
+\end{itemize}
 
 The first command imports the theoretical model that includes the interactions related with the heavy neutrino formation and decay. The next command specifies the processes that are going to be simulated. pp $>$ n3 ta+ jj stands por the proton-proton collision that decays into a heavy neutrino, a $\tau$ with positive charge, and two jets. The flag QCD=0 is used to exclude all strong interactions that can be involved in the process. Finally, n3 $>$ ta+ jj is used to force the decay of the heavy neutrino into a $\tau$ charge positively and two jets. The subsequent commands are used to take into account all the possible combinations of the electrical charge that the $\tau$ may have.
 

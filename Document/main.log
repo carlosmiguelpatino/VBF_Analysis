@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.6)  9 MAR 2017 00:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.6)  14 MAR 2017 23:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -848,14 +848,14 @@ l.6
 
 
 
-] <Figures/Feynman_W.png, id=126, 796.9775pt x 528.97626pt>
+] <Figures/Feynman_W.png, id=128, 796.9775pt x 528.97626pt>
 File: Figures/Feynman_W.png Graphic file (type png)
 
 <use Figures/Feynman_W.png>
 Package pdftex.def Info: Figures/Feynman_W.png used on input line 11.
 (pdftex.def)             Requested size: 340.00969pt x 225.67154pt.
  [2]
-<Figures/Feynman_VBF.JPG, id=137, 551.81157pt x 382.42876pt>
+<Figures/Feynman_VBF.JPG, id=139, 551.81157pt x 382.42876pt>
 File: Figures/Feynman_VBF.JPG Graphic file (type jpg)
 
 <use Figures/Feynman_VBF.JPG>
@@ -897,34 +897,22 @@ Chapter 3.
 
  (./Simulation/simulation.tex
 Chapter 4.
-<Figures/mg_commands.png, id=180, 362.35374pt x 145.54375pt>
-File: Figures/mg_commands.png Graphic file (type png)
-
-<use Figures/mg_commands.png>
-Package pdftex.def Info: Figures/mg_commands.png used on input line 9.
-(pdftex.def)             Requested size: 362.35286pt x 145.54338pt.
-
-Overfull \hbox (22.34317pt too wide) in paragraph at lines 9--10
- [][] 
- []
-
 [9
 
 
 
- <./Figures/mg_commands.png>]
-<Figures/Feynman_hnZ.PNG, id=185, 518.6878pt x 405.01312pt>
+] <Figures/Feynman_hnZ.PNG, id=185, 518.6878pt x 405.01312pt>
 File: Figures/Feynman_hnZ.PNG Graphic file (type png)
 
 <use Figures/Feynman_hnZ.PNG>
-Package pdftex.def Info: Figures/Feynman_hnZ.PNG used on input line 18.
+Package pdftex.def Info: Figures/Feynman_hnZ.PNG used on input line 20.
 (pdftex.def)             Requested size: 233.40735pt x 182.25421pt.
 
 <Figures/Feynman_hnGamma.PNG, id=194, 519.44063pt x 392.96812pt>
 File: Figures/Feynman_hnGamma.PNG Graphic file (type png)
 
 <use Figures/Feynman_hnGamma.PNG>
-Package pdftex.def Info: Figures/Feynman_hnGamma.PNG used on input line 27.
+Package pdftex.def Info: Figures/Feynman_hnGamma.PNG used on input line 29.
 (pdftex.def)             Requested size: 233.74612pt x 176.83401pt.
  [10 <./Figures/Feynman_hnZ.PNG>]) [11 <./Figures/Feynman_hnGamma.PNG>]
 \openout2 = `Definitions/definitions.aux'.
@@ -940,94 +928,89 @@ Chapter 5.
 
  (./DistributionAnalysis/distributionAnalysis.tex
 Chapter 6.
-<Figures/Plots/tau2_eta_unitNoCuts.pdf, id=230, 569.12625pt x 313.17pt>
-File: Figures/Plots/tau2_eta_unitNoCuts.pdf Graphic file (type pdf)
+<Figures/Plots/tau2_eta_unitNC.pdf, id=230, 569.12625pt x 313.17pt>
+File: Figures/Plots/tau2_eta_unitNC.pdf Graphic file (type pdf)
 
-<use Figures/Plots/tau2_eta_unitNoCuts.pdf>
-Package pdftex.def Info: Figures/Plots/tau2_eta_unitNoCuts.pdf used on input li
-ne 9.
-(pdftex.def)             Requested size: 408.01057pt x 224.52171pt.
-
-Overfull \hbox (68.00089pt too wide) in paragraph at lines 9--10
- [][] 
- []
-
-[15
+<use Figures/Plots/tau2_eta_unitNC.pdf>
+Package pdftex.def Info: Figures/Plots/tau2_eta_unitNC.pdf used on input line 9
+.
+(pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
+ [15
 
 
 
-] <Figures/Plots/tau1_pt_unitNoCuts.pdf, id=235, 569.12625pt x 313.17pt>
-File: Figures/Plots/tau1_pt_unitNoCuts.pdf Graphic file (type pdf)
+]
+<Figures/Plots/tau1_pt_unitNC.pdf, id=235, 569.12625pt x 313.17pt>
+File: Figures/Plots/tau1_pt_unitNC.pdf Graphic file (type pdf)
 
-<use Figures/Plots/tau1_pt_unitNoCuts.pdf>
-Package pdftex.def Info: Figures/Plots/tau1_pt_unitNoCuts.pdf used on input lin
-e 16.
-(pdftex.def)             Requested size: 408.01057pt x 224.52171pt.
+<use Figures/Plots/tau1_pt_unitNC.pdf>
+Package pdftex.def Info: Figures/Plots/tau1_pt_unitNC.pdf used on input line 16
+.
+(pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
+ [16 <./Figures/Plots/tau1_pt_unitNC.pdf, page is rotated 90 degrees> <./Figure
+s/Plots/tau2_eta_unitNC.pdf, page is rotated 90 degrees>]
+<Figures/Plots/ljet_pt_unitNC.pdf, id=330, 569.12625pt x 313.17pt>
+File: Figures/Plots/ljet_pt_unitNC.pdf Graphic file (type pdf)
 
-Overfull \hbox (68.00089pt too wide) in paragraph at lines 16--17
- [][] 
- []
-
-<Figures/Plots/ljet_pt_unitNoCuts.pdf, id=239, 569.12625pt x 313.17pt>
-File: Figures/Plots/ljet_pt_unitNoCuts.pdf Graphic file (type pdf)
-
-<use Figures/Plots/ljet_pt_unitNoCuts.pdf>
-Package pdftex.def Info: Figures/Plots/ljet_pt_unitNoCuts.pdf used on input lin
-e 27.
+<use Figures/Plots/ljet_pt_unitNC.pdf>
+Package pdftex.def Info: Figures/Plots/ljet_pt_unitNC.pdf used on input line 27
+.
 (pdftex.def)             Requested size: 161.50667pt x 88.87209pt.
 
-<Figures/Plots/sjet_pt_unitNoCuts.pdf, id=240, 569.12625pt x 313.17pt>
-File: Figures/Plots/sjet_pt_unitNoCuts.pdf Graphic file (type pdf)
+<Figures/Plots/sjet_pt_unitNC.pdf, id=331, 569.12625pt x 313.17pt>
+File: Figures/Plots/sjet_pt_unitNC.pdf Graphic file (type pdf)
 
-<use Figures/Plots/sjet_pt_unitNoCuts.pdf>
-Package pdftex.def Info: Figures/Plots/sjet_pt_unitNoCuts.pdf used on input lin
-e 35.
+<use Figures/Plots/sjet_pt_unitNC.pdf>
+Package pdftex.def Info: Figures/Plots/sjet_pt_unitNC.pdf used on input line 35
+.
 (pdftex.def)             Requested size: 161.50667pt x 88.87209pt.
-File: Figures/Plots/tau1_pt_unitNoCuts.pdf Graphic file (type pdf)
-
-<use Figures/Plots/tau1_pt_unitNoCuts.pdf>
-Package pdftex.def Info: Figures/Plots/tau1_pt_unitNoCuts.pdf used on input lin
-e 43.
+File: Figures/Plots/tau1_pt_unitNC.pdf Graphic file (type pdf)
+ <use Figures/Plots/tau1_pt_unitNC.pdf>
+Package pdftex.def Info: Figures/Plots/tau1_pt_unitNC.pdf used on input line 43
+.
 (pdftex.def)             Requested size: 161.50667pt x 88.87209pt.
 
-<Figures/Plots/tau2_pt_unitNoCuts.pdf, id=241, 569.12625pt x 313.17pt>
-File: Figures/Plots/tau2_pt_unitNoCuts.pdf Graphic file (type pdf)
+<Figures/Plots/tau2_pt_unitNC.pdf, id=332, 569.12625pt x 313.17pt>
+File: Figures/Plots/tau2_pt_unitNC.pdf Graphic file (type pdf)
 
-<use Figures/Plots/tau2_pt_unitNoCuts.pdf>
-Package pdftex.def Info: Figures/Plots/tau2_pt_unitNoCuts.pdf used on input lin
-e 51.
+<use Figures/Plots/tau2_pt_unitNC.pdf>
+Package pdftex.def Info: Figures/Plots/tau2_pt_unitNC.pdf used on input line 51
+.
 (pdftex.def)             Requested size: 161.50667pt x 88.87209pt.
- [16 <./Figures/Plots/tau2_eta_unitNoCuts.pdf, page is rotated 90 degrees>] [17
- <./Figures/Plots/tau1_pt_unitNoCuts.pdf, page is rotated 90 degrees>] [18 <./F
-igures/Plots/ljet_pt_unitNoCuts.pdf, page is rotated 90 degrees> <./Figures/Plo
-ts/sjet_pt_unitNoCuts.pdf, page is rotated 90 degrees> <./Figures/Plots/tau2_pt
-_unitNoCuts.pdf, page is rotated 90 degrees>] <Figures/Plots/HT_unitNoCuts.pdf,
- id=475, 569.12625pt x 313.17pt>
-File: Figures/Plots/HT_unitNoCuts.pdf Graphic file (type pdf)
+ [17 <./Figures/Plots/ljet_pt_unitNC.pdf, page is rotated 90 degrees> <./Figure
+s/Plots/sjet_pt_unitNC.pdf, page is rotated 90 degrees> <./Figures/Plots/tau2_p
+t_unitNC.pdf, page is rotated 90 degrees>] <Figures/Plots/HT_unitNC.pdf, id=471
+, 569.12625pt x 313.17pt>
+File: Figures/Plots/HT_unitNC.pdf Graphic file (type pdf)
 
-<use Figures/Plots/HT_unitNoCuts.pdf>
-Package pdftex.def Info: Figures/Plots/HT_unitNoCuts.pdf used on input line 65.
+<use Figures/Plots/HT_unitNC.pdf>
+Package pdftex.def Info: Figures/Plots/HT_unitNC.pdf used on input line 64.
+(pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
 
-(pdftex.def)             Requested size: 408.01057pt x 224.52171pt.
+<Figures/Plots/ST_unitNC.pdf, id=472, 569.12625pt x 313.17pt>
+File: Figures/Plots/ST_unitNC.pdf Graphic file (type pdf)
 
-Overfull \hbox (68.00089pt too wide) in paragraph at lines 65--66
- [][] 
- []
+<use Figures/Plots/ST_unitNC.pdf>
+Package pdftex.def Info: Figures/Plots/ST_unitNC.pdf used on input line 71.
+(pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
 
-<Figures/Plots/ST_unitNoCuts.pdf, id=476, 569.12625pt x 313.17pt>
-File: Figures/Plots/ST_unitNoCuts.pdf Graphic file (type pdf)
+<Figures/Plots/HT_unitVBF.pdf, id=476, 569.12625pt x 313.17pt>
+File: Figures/Plots/HT_unitVBF.pdf Graphic file (type pdf)
 
-<use Figures/Plots/ST_unitNoCuts.pdf>
-Package pdftex.def Info: Figures/Plots/ST_unitNoCuts.pdf used on input line 72.
+<use Figures/Plots/HT_unitVBF.pdf>
+Package pdftex.def Info: Figures/Plots/HT_unitVBF.pdf used on input line 80.
+(pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
 
-(pdftex.def)             Requested size: 408.01057pt x 224.52171pt.
+<Figures/Plots/ST_unitVBF.pdf, id=477, 569.12625pt x 313.17pt>
+File: Figures/Plots/ST_unitVBF.pdf Graphic file (type pdf)
 
-Overfull \hbox (68.00089pt too wide) in paragraph at lines 72--73
- [][] 
- []
-
-) [19 <./Figures/Plots/HT_unitNoCuts.pdf, page is rotated 90 degrees>] [20 <./F
-igures/Plots/ST_unitNoCuts.pdf, page is rotated 90 degrees>]
+<use Figures/Plots/ST_unitVBF.pdf>
+Package pdftex.def Info: Figures/Plots/ST_unitVBF.pdf used on input line 88.
+(pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
+ [18 <./Figures/Plots/HT_unitNC.pdf, page is rotated 90 degrees>] [19 <./Figure
+s/Plots/ST_unitNC.pdf, page is rotated 90 degrees> <./Figures/Plots/HT_unitVBF.
+pdf, page is rotated 90 degrees>]) [20 <./Figures/Plots/ST_unitVBF.pdf, page is
+ rotated 90 degrees>]
 Underfull \hbox (badness 5878) in paragraph at lines 241--242
 \OT1/cmr/m/n/10.95 J., & Zgubi^^Tc, M. (2016). Vec-tor bo-son fu-sion searches
  []
@@ -1080,13 +1063,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 255.
  ) 
 Here is how much of TeX's memory you used:
- 8575 strings out of 494910
- 126176 string characters out of 6179837
- 223872 words of memory out of 5000000
- 11605 multiletter control sequences out of 15000+600000
+ 8583 strings out of 494910
+ 126250 string characters out of 6179837
+ 223873 words of memory out of 5000000
+ 11611 multiletter control sequences out of 15000+600000
  13669 words of font info for 52 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 42i,7n,45p,1217b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,7n,45p,1370b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -1099,10 +1082,10 @@ c/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (25 pages, 398957 bytes).
+Output written on main.pdf (25 pages, 423995 bytes).
 PDF statistics:
- 642 PDF objects out of 1000 (max. 8388607)
- 404 compressed objects within 5 object streams
- 67 named destinations out of 1000 (max. 500000)
- 154 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 736 PDF objects out of 1000 (max. 8388607)
+ 447 compressed objects within 5 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 159 words of extra memory for PDF output out of 10000 (max. 10000000)
 
