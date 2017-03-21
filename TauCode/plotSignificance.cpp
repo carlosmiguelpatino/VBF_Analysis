@@ -6,7 +6,7 @@ using namespace std;
 void plotSignificance(){
 
 
-  string delta_names[]= {"38","39", "40", "41", "42", "43", "44"};
+  string delta_names[]= {"38","39", "40", "41", "42", "43", "44", "45"};
 
   int n_points = 8;
   double eta_values [] = { 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5};
