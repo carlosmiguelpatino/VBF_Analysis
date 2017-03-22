@@ -3,21 +3,21 @@
 
 using namespace std;
 
-void plotSignificance(){
+void plotSignificance(string normalizedDirectories){
 
 
   string delta_names[]= {"38","39", "40", "41", "42", "43", "44", "45"};
 
+  double variable_values [] = {3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5};
   int n_points = 8;
-  double eta_values [] = { 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5};
-  double significance_values [7];
+  double significance_values [n_points];
 
-  for (int i = 0; i <=6; i++){
+  for (int i = 0; i <=7; i++){
 
-    string fileDY="../dEtadiJetOpti/normalizedEta" +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_DYToLL.root";
-    string fileW="../dEtadiJetOpti/normalizedEta" +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_wjets.root";
-    string fileTtbar="../dEtadiJetOpti/normalizedEta" +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_ttbar_semi.root";
-    string fileSignal="../dEtadiJetOpti/normalizedEta" +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_signal.root";
+    string fileDY= normalizedDirectories +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_DYToLL.root";
+    string fileW= normalizedDirectories +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_wjets.root";
+    string fileTtbar= normalizedDirectories +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_ttbar_semi.root";
+    string fileSignal= normalizedDirectories +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_signal.root";
 
     TFile *DY_file = new TFile(fileDY.c_str());
     TFile *Wjets_file = new TFile(fileW.c_str());
@@ -45,12 +45,13 @@ void plotSignificance(){
 
   TCanvas *c = new TCanvas;
 
-  TGraph *g = new TGraph(n_points,eta_values,significance_values);
+  TGraph *g = new TGraph(n_points,variable_values,significance_values);
+  g->SetTitle("Significance");
   g->Draw("AC*");
 
   TImage *img = TImage::Create();
 
   img->FromPad(c);
-  img->WriteImage("significance.png");
+  img->WriteImage("../TauPlots/significance.png");
 
 }
