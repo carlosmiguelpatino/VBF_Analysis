@@ -358,7 +358,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       st += Tau1HadTLV.Pt() + Tau2HadTLV.Pt() + Tau3HadTLV.Pt() + Jet_leading_vec_tc.Pt() + Jet_sleading_vec_tc.Pt();
 
       for (int i = 0; i < jets_tlv_list_tc.size(); i++) {
-	st += jets_tlv_list_tc[i].Pt();
+	       st += jets_tlv_list_tc[i].Pt();
       }
     }
 
@@ -374,25 +374,30 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     if((pass_cuts[1] == 1) && (abs(Tau1HadTLV.Eta()) < tau_eta_cut) && (abs(Tau2HadTLV.Eta()) < tau_eta_cut)){
       pass_cuts[2] = 1;
     }
-    // Number of bjets cut
-    if ((pass_cuts[2] == 1) && (n_b_jets_tc == 0)){
-      pass_cuts[3] = 1;
+    //Events with minimum tau reconstructued mass
+    if((pass_cuts[2] == 1) && ((Tau1HadTLV + Tau2HadTLV).M() > tauMass_cut))
+    {
+      pass_cuts[3] == 1;
     }
-    // Jets with min pt
-    if ((pass_cuts[3] == 1) && (jet_pt_condition > 1)){
+    // Number of bjets cut
+    if ((pass_cuts[3] == 1) && (n_b_jets_tc == 0)){
       pass_cuts[4] = 1;
     }
-    // Opposite hemisfere in dijet cut
-    if((pass_cuts[4] == 1) && ((Jet_leading_vec_tc.Eta()*Jet_sleading_vec_tc.Eta()) < 0) ){
+    // Jets with min pt
+    if ((pass_cuts[4] == 1) && (jet_pt_condition > 1)){
       pass_cuts[5] = 1;
     }
-    // Delta eta in dijet pair cut
-    if ((pass_cuts[5] == 1) && (delta_eta_diJet > 3.8)){
+    // Opposite hemisfere in dijet cut
+    if((pass_cuts[5] == 1) && ((Jet_leading_vec_tc.Eta()*Jet_sleading_vec_tc.Eta()) < 0) ){
       pass_cuts[6] = 1;
     }
-    //Min DiJetMass cut
-    if ((pass_cuts[6] == 1) && (DiJetMass_final > 500.)){
+    // Delta eta in dijet pair cut
+    if ((pass_cuts[6] == 1) && (delta_eta_diJet > deltaEta_diJet_cut)){
       pass_cuts[7] = 1;
+    }
+    //Min DiJetMass cut
+    if ((pass_cuts[7] == 1) && (DiJetMass_final > diJetmass_cut)){
+      pass_cuts[8] = 1;
     }
 
     //Fill histograms

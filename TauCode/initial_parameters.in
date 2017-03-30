@@ -5,12 +5,13 @@ jet_eta_max: 2.5
 b_jet_pt_min: 30.0
 DR_jet_lep_max: 0.3
 // For Taus
-tau_pt_min: 20.0 
+tau_pt_min: 20.0
 // Topology
 met_min: 0.0
 transversemassmin: 0.0
 //Histograms cuts
 tau_pt_cut: 20.0
 tau_eta_cut: 2.1
-deltaEta_diJet_cut: 3.8
+deltaEta_diJet_cut: 4.2
 diJetmass_cut: 500.0
+tauMass_cut: 100.0
