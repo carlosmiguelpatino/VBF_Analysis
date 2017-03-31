@@ -53,6 +53,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
   double tau_eta_cut      = params->GetValue ("tau_eta_cut", 2.1);
   double deltaEta_diJet_cut = params->GetValue("deltaEta_diJet_cut", 3.8);
   double diJetmass_cut    = params->GetValue("diJetmass_cut", 500.0);
+  double tauMass_cut = params->GetValue("tauMass_cut", 100.0);
   crateHistoMasps(nDir);
 
   ExRootTreeReader *treeReader = new ExRootTreeReader(&chain);
