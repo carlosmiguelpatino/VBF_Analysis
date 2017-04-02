@@ -3,21 +3,21 @@
 
 using namespace std;
 
-void plotSignificance(string normalizedDirectories){
+void plotSignificance(string normalizedDirectories, const unsigned n_points, const unsigned initial_value){
 
-
-  string delta_names[]= {"38","39", "40", "41", "42", "43", "44", "45"};
+  //string delta_names[]= {"38","39", "40", "41", "42", "43", "44", "45"};
 
   double variable_values [] = {3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5};
-  int n_points = 8;
   double significance_values [n_points];
+  
+  for (int i = 0; i < n_points; i++){
 
-  for (int i = 0; i <=7; i++){
+    string variable_path = Form("%d", i + initial_value);
 
-    string fileDY= normalizedDirectories +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_DYToLL.root";
-    string fileW= normalizedDirectories +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_wjets.root";
-    string fileTtbar= normalizedDirectories +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_ttbar_semi.root";
-    string fileSignal= normalizedDirectories +  delta_names[i] + "/VBF_diJetMass/normalizedHistos_signal.root";
+    string fileDY= normalizedDirectories +  variable_path + "/VBF_diJetMass/normalizedHistos_DYToLL.root";
+    string fileW= normalizedDirectories +  variable_path + "/VBF_diJetMass/normalizedHistos_wjets.root";
+    string fileTtbar= normalizedDirectories +  variable_path + "/VBF_diJetMass/normalizedHistos_ttbar_semi.root";
+    string fileSignal= normalizedDirectories +  variable_path + "/VBF_diJetMass/normalizedHistos_signal.root";
 
     TFile *DY_file = new TFile(fileDY.c_str());
     TFile *Wjets_file = new TFile(fileW.c_str());
