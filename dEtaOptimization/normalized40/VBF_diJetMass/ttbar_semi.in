@@ -5,7 +5,7 @@ scaleFactorError: 0.0
 // ====================================================
 
 // ===== Flags for NormalizeHistos.cpp ================
-rootfile: /home/carlosmiguelpatino/Documents/PhysicsPlotter_pheno/data/output_signal_deltaEta40.root
+rootfile: /home/carlosmiguelpatino/Documents/PhysicsPlotter_pheno/data/ttbar_semileptonico_isr_deltaEta40.root
 directory: VBF_diJetMass
 xsection: 159400.
 skimmingEff: 1.0
