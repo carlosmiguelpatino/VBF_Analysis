@@ -1,3 +1,12 @@
+/*
+@file PhenoAnalyzer.cc
+@author Andres Florez
+@author Carlos Miguel Patino
+@date April 2, 2017
+
+Code used to perform phenomenological analysis of Heavy Neutrinos in the tau channel
+*/
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -100,7 +109,6 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     int nmuon_counter = 0;
     double DiJetMass_final = 100.;
     int n_b_jets_tc = 0;
-    bool four_jets_condition = false;
 
     //////////////////Tau Channel///////////
     //Search for taus and bjets
@@ -410,7 +418,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       _hmap_n_tau[i]->Fill(ntau_counter);
 
       if (pass_cuts[i] == 1){
-        
+
 	_hmap_Nevents[i]->Fill(1.0);
         if(Jet_leading_vec_tc.Pt() > 1.0){
 	  _hmap_lead_jet_pT[i]->Fill(Jet_leading_vec_tc.Pt());
