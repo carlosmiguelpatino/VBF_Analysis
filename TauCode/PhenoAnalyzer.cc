@@ -524,7 +524,7 @@ void PhenoAnalysis::crateHistoMasps (int directories)
       _hmap_tau2_phi[i]      = new TH1F("tau2_phi",       "#phi(#tau_{2})", 70, -3.6, 3.6);
       _hmap_ht[i]            = new TH1F("HT", "H_{T}", 100, 0, 5000);
       _hmap_st[i]            = new TH1F("ST", "S_{T}", 100, 0, 5000);
-      _hmap_dijet_mass[i]     = new TH1F("diJet_Mass", "diJet_Mass", 1000, 0, 5000);
+      _hmap_dijet_mass[i]     = new TH1F("diJet_Mass", "diJet_Mass", 100, 0, 5000);
       _hmap_dijet_deltaEta[i] = new TH1F("diJet_deltaEta", "diJet_deltaEta", 160, 0, 8);
     }
 }
