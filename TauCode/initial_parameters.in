@@ -10,8 +10,9 @@ tau_pt_min: 20.0
 met_min: 0.0
 transversemassmin: 0.0
 //Histograms cuts
-tau_pt_cut: 20.0
+tau_pt_cut: 50.0
 tau_eta_cut: 2.1
 deltaEta_diJet_cut: 4.2
-diJetmass_cut: 500.0
+diJetmass_cut: 800.0
 tauMass_cut: 100.0
+MET_cut: 50.0
