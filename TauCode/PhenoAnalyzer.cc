@@ -391,8 +391,8 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       pass_cuts[3] = 1;
     }
     //Min MET cut
-    if ((pass_cut[3] == 1) && (MET > MET_cut)){
-      pass_cut[4] = 1;
+    if ((pass_cuts[3] == 1) && (MET > MET_cut)){
+      pass_cuts[4] = 1;
     }
     // Number of bjets cut
     if ((pass_cuts[4] == 1) && (n_b_jets_tc == 0)){
