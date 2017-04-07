@@ -508,23 +508,23 @@ void PhenoAnalysis::crateHistoMasps (int directories)
   for (int i = 0; i < directories; i++)
     {
       _hmap_Nevents[i]       = new TH1F("Nevents", "Nevents", 3,0,3);
-      _hmap_lead_jet_pT[i]   = new TH1F("jet_lead_pT",    "p_{T} Leading Jet", 200, 0., 2000.);
-      _hmap_lead_jet_eta[i]  = new TH1F("jet_lead_eta",   "#eta Leading Jet", 50, -5.0, 5.0);
-      _hmap_lead_jet_phi[i]  = new TH1F("jet_lead_phi",   "#phi Leading Jet", 70, -3.6, 3.6);
-      _hmap_slead_jet_pT[i]   = new TH1F("jet_slead_pT",    "p_{T} Sub-leading Jet", 200, 0., 2000.);
-      _hmap_slead_jet_eta[i]  = new TH1F("jet_slead_eta",   "#eta Sub-leading Jet", 50, -5.0, 5.0);
-      _hmap_slead_jet_phi[i]  = new TH1F("jet_slead_phi",   "#phi Sub-leading Jet", 70, -3.6, 3.6);
-      _hmap_n_jets[i]        = new TH1F("N_jets",         "N(jet)", 6, 0, 6);
-      _hmap_n_tau[i]         = new TH1F("N_taus",          "N(#tau)", 4, 0, 4);
-      _hmap_tau1_pT[i]       = new TH1F("tau1_pT",        "p_{T}(#tau_{1})", 200, 0., 2000.);
-      _hmap_tau1_eta[i]      = new TH1F("tau1_eta",       "#eta(#tau_{1})", 50, -3.5, 3.5);
-      _hmap_tau1_phi[i]      = new TH1F("tau1_phi",       "#phi(#tau_{1})", 70, -3.6, 3.6);
-      _hmap_tau2_pT[i]       = new TH1F("tau2_pT",        "p_{T}(#tau_{2})", 200, 0., 2000.);
-      _hmap_tau2_eta[i]      = new TH1F("tau2_eta",       "#eta(#tau_{2})", 50, -3.5, 3.5);
-      _hmap_tau2_phi[i]      = new TH1F("tau2_phi",       "#phi(#tau_{2})", 70, -3.6, 3.6);
+      _hmap_lead_jet_pT[i]   = new TH1F("jetLeadPt",    "p_{T} Leading Jet", 200, 0., 2000.);
+      _hmap_lead_jet_eta[i]  = new TH1F("jetLeadEta",   "#eta Leading Jet", 50, -5.0, 5.0);
+      _hmap_lead_jet_phi[i]  = new TH1F("jetLeadPhi",   "#phi Leading Jet", 70, -3.6, 3.6);
+      _hmap_slead_jet_pT[i]   = new TH1F("jetSleadPt",    "p_{T} Sub-leading Jet", 200, 0., 2000.);
+      _hmap_slead_jet_eta[i]  = new TH1F("jetSleadEta",   "#eta Sub-leading Jet", 50, -5.0, 5.0);
+      _hmap_slead_jet_phi[i]  = new TH1F("jetSleadPhi",   "#phi Sub-leading Jet", 70, -3.6, 3.6);
+      _hmap_n_jets[i]        = new TH1F("nJets",         "N(jet)", 6, 0, 6);
+      _hmap_n_tau[i]         = new TH1F("nTaus",          "N(#tau)", 4, 0, 4);
+      _hmap_tau1_pT[i]       = new TH1F("tau1Pt",        "p_{T}(#tau_{1})", 200, 0., 2000.);
+      _hmap_tau1_eta[i]      = new TH1F("tau1Eta",       "#eta(#tau_{1})", 50, -3.5, 3.5);
+      _hmap_tau1_phi[i]      = new TH1F("tau1Phi",       "#phi(#tau_{1})", 70, -3.6, 3.6);
+      _hmap_tau2_pT[i]       = new TH1F("tau2Pt",        "p_{T}(#tau_{2})", 200, 0., 2000.);
+      _hmap_tau2_eta[i]      = new TH1F("tau2Eta",       "#eta(#tau_{2})", 50, -3.5, 3.5);
+      _hmap_tau2_phi[i]      = new TH1F("tau2Phi",       "#phi(#tau_{2})", 70, -3.6, 3.6);
       _hmap_ht[i]            = new TH1F("HT", "H_{T}", 100, 0, 5000);
       _hmap_st[i]            = new TH1F("ST", "S_{T}", 100, 0, 5000);
-      _hmap_dijet_mass[i]     = new TH1F("diJet_Mass", "diJet_Mass", 100, 0, 5000);
-      _hmap_dijet_deltaEta[i] = new TH1F("diJet_deltaEta", "diJet_deltaEta", 160, 0, 8);
+      _hmap_dijet_mass[i]     = new TH1F("diJetMass", "diJet_Mass", 100, 0, 5000);
+      _hmap_dijet_deltaEta[i] = new TH1F("diJetDeltaEta", "diJet_deltaEta", 160, 0, 8);
     }
 }
