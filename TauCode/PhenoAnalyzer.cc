@@ -81,8 +81,8 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
 
     treeReader->ReadEntry(entry);
     int pass_cuts[nDir] = {0};
-    TLorentzVector Jet_leading_vec_tc(0., 0., 0., 0.); //tc stands for tau channel
-    TLorentzVector Jet_sleading_vec_tc(0., 0., 0., 0.);
+    TLorentzVector jetLeadingVec(0., 0., 0., 0.); //tc stands for tau channel
+    TLorentzVector jetSleadingVec(0., 0., 0., 0.);
 
     TLorentzVector Jet_1(0., 0., 0., 0.);
     TLorentzVector Jet_2(0., 0., 0., 0.);
@@ -96,7 +96,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     TLorentzVector Tau2HadTLV (0., 0., 0., 0.);
     TLorentzVector Tau3HadTLV (0., 0., 0., 0.);
 
-    vector<TLorentzVector> jets_tlv_list_tc;
+    vector<TLorentzVector> jetsList;
 
     bool fill_tau1 = false;
     bool fill_tau2 = false;
@@ -110,7 +110,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     int ntau_counter = 0;
     int nmuon_counter = 0;
     double DiJetMass_final = 100.;
-    int n_b_jets_tc = 0;
+    int nBJets = 0;
 
     //////////////////Tau Channel///////////
     //Search for taus and bjets
@@ -118,13 +118,14 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
 
       Jet *jet = (Jet*) branchJet->At(j);
 
-      if((jet->BTag == 1) && (jet->PT > b_jet_pt_min)){n_b_jets_tc++;}
+      if((jet->BTag == 1) && (jet->PT > b_jet_pt_min)){nBJets++;}
 
       //Tau search
       if((jet->TauTag == 1) && (jet->PT > tau_pt_min)){
 
         ntau_counter++;
         double tau_energy = calculateE(jet->Eta, jet->PT, jet->Mass);
+
         if((fill_tau1 == false) && (fill_tau2 == false) && (fill_tau3 == false)){
 
           Tau1HadTLV.SetPtEtaPhiE(jet->PT, jet->Eta, jet->Phi, tau_energy);
@@ -251,7 +252,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
         }
 
         if((n_jets <= 6) && (jet->TauTag == 0) && (jet->BTag == 0) && (abs(jet->Eta) < 5.0)){
-          jets_tlv_list_tc.push_back(jet_i);
+          jetsList.push_back(jet_i);
           n_jets++;
         }
       }
@@ -276,24 +277,24 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     int dijet_index2 = 0;
 
     //Search DiJetMass
-    for(int k = 0; k < jets_tlv_list_tc.size(); k++){
+    for(int k = 0; k < jetsList.size(); k++){
 
-      if (jets_tlv_list_tc.size() < 4){break;}
-      Jet_1 = jets_tlv_list_tc[k];
+      if (jetsList.size() < 4){break;}
+      Jet_1 = jetsList[k];
 
       if ((Jet_1.Pt() < 30.0) || (abs(Jet_1.Eta()) > 5.0)){continue;}
 
-      for (int sj = k + 1; sj < jets_tlv_list_tc.size(); sj++){
+      for (int sj = k + 1; sj < jetsList.size(); sj++){
 
         if (sj != k){
 
-          Jet_2 = jets_tlv_list_tc[sj];
+          Jet_2 = jetsList[sj];
           if ((Jet_2.Pt() < 30.0) || (abs(Jet_2.Eta()) > 5.0)){continue;}
           double DiJetMass = (Jet_1+Jet_2).M();
           if (DiJetMass > DiJetMass_final){
             DiJetMass_final = DiJetMass;
-            Jet_leading_vec_tc = Jet_1;
-            Jet_sleading_vec_tc = Jet_2;
+            jetLeadingVec = Jet_1;
+            jetSleadingVec = Jet_2;
             dijet_index1 = k;
             dijet_index2 = sj;
           }
@@ -301,76 +302,76 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       }
     }
 
-    if(Jet_leading_vec_tc.Pt() < Jet_sleading_vec_tc.Pt()){
-      tmp_tlv = Jet_leading_vec_tc;
-      Jet_leading_vec_tc = Jet_sleading_vec_tc;
-      Jet_sleading_vec_tc = tmp_tlv;
+    if(jetLeadingVec.Pt() < jetSleadingVec.Pt()){
+      tmp_tlv = jetLeadingVec;
+      jetLeadingVec = jetSleadingVec;
+      jetSleadingVec = tmp_tlv;
     }
 
-    if(jets_tlv_list_tc.size() > 3){
+    if(jetsList.size() > 3){
 
-      tmp_tlv = jets_tlv_list_tc[jets_tlv_list_tc.size() - 1];
-      jets_tlv_list_tc[jets_tlv_list_tc.size() - 1] = jets_tlv_list_tc[dijet_index1];
-      jets_tlv_list_tc[dijet_index1] = tmp_tlv;
+      //Remove the diJet pair from the jets list
+      tmp_tlv = jetsList[jetsList.size() - 1];
+      jetsList[jetsList.size() - 1] = jetsList[dijet_index1];
+      jetsList[dijet_index1] = tmp_tlv;
 
-      tmp_tlv = jets_tlv_list_tc[jets_tlv_list_tc.size() - 2];
-      jets_tlv_list_tc[jets_tlv_list_tc.size() -2] = jets_tlv_list_tc[dijet_index2];
-      jets_tlv_list_tc[dijet_index2] = tmp_tlv;
+      tmp_tlv = jetsList[jetsList.size() - 2];
+      jetsList[jetsList.size() -2] = jetsList[dijet_index2];
+      jetsList[dijet_index2] = tmp_tlv;
 
-      jets_tlv_list_tc.pop_back();
-      jets_tlv_list_tc.pop_back();
+      jetsList.pop_back();
+      jetsList.pop_back();
 
       //Order jets by pt
       for(int jet_order = 0; jet_order < 4; jet_order++){
-        if(jets_tlv_list_tc[2].Pt() < jets_tlv_list_tc[3].Pt()){
-          tmp_tlv = jets_tlv_list_tc[2];
-          jets_tlv_list_tc[2] = jets_tlv_list_tc[3];
-          jets_tlv_list_tc[3] = tmp_tlv;
+        if(jetsList[2].Pt() < jetsList[3].Pt()){
+          tmp_tlv = jetsList[2];
+          jetsList[2] = jetsList[3];
+          jetsList[3] = tmp_tlv;
         }
-        if(jets_tlv_list_tc[1].Pt() < jets_tlv_list_tc[2].Pt()){
-          tmp_tlv = jets_tlv_list_tc[1];
-          jets_tlv_list_tc[1] = jets_tlv_list_tc[2];
-          jets_tlv_list_tc[2] = tmp_tlv;
+        if(jetsList[1].Pt() < jetsList[2].Pt()){
+          tmp_tlv = jetsList[1];
+          jetsList[1] = jetsList[2];
+          jetsList[2] = tmp_tlv;
         }
-        if(jets_tlv_list_tc[0].Pt() < jets_tlv_list_tc[1].Pt()){
-          tmp_tlv = jets_tlv_list_tc[0];
-          jets_tlv_list_tc[0] = jets_tlv_list_tc[1];
-          jets_tlv_list_tc[1] = tmp_tlv;
+        if(jetsList[0].Pt() < jetsList[1].Pt()){
+          tmp_tlv = jetsList[0];
+          jetsList[0] = jetsList[1];
+          jetsList[1] = tmp_tlv;
         }
       }
     }
 
     //Check for jets pt condition
     int jet_pt_condition = 0;
-    bool pass_jet_min_pt = true;
-    for (int i = 0; i < jets_tlv_list_tc.size(); i++) {
-      if(jets_tlv_list_tc[i].Pt() > 30.){
+    for (int i = 0; i < jetsList.size(); i++) {
+      if(jetsList[i].Pt() > 30.){
         jet_pt_condition++;
       }
     }
 
-    double delta_eta_diJet = abs(Jet_leading_vec_tc.Eta()-Jet_sleading_vec_tc.Eta());
+    double delta_eta_diJet = abs(jetLeadingVec.Eta()-jetSleadingVec.Eta());
     transmass = TMath::Sqrt(TMath::Abs(2*Tau1HadTLV.Pt()*MET*(1-TMath::Cos(normalizedDphi(Tau1HadTLV.Phi() - Met_phi)))));
     double ht = 0.;
     double st = 0.;
 
     if (jet_pt_condition > 1) {
 
-      ht += Jet_leading_vec_tc.Pt() + Jet_sleading_vec_tc.Pt();
+      ht += jetLeadingVec.Pt() + jetSleadingVec.Pt();
 
-      for (int i = 0; i < jets_tlv_list_tc.size(); i++) {
+      for (int i = 0; i < jetsList.size(); i++) {
 
-        ht += jets_tlv_list_tc[i].Pt();
+        ht += jetsList[i].Pt();
 
       }
     }
 
     if (jet_pt_condition > 1) {
 
-      st += Tau1HadTLV.Pt() + Tau2HadTLV.Pt() + Tau3HadTLV.Pt() + Jet_leading_vec_tc.Pt() + Jet_sleading_vec_tc.Pt();
+      st += Tau1HadTLV.Pt() + Tau2HadTLV.Pt() + Tau3HadTLV.Pt() + jetLeadingVec.Pt() + jetSleadingVec.Pt();
 
-      for (int i = 0; i < jets_tlv_list_tc.size(); i++) {
-	st += jets_tlv_list_tc[i].Pt();
+      for (int i = 0; i < jetsList.size(); i++) {
+	      st += jetsList[i].Pt();
       }
     }
 
@@ -395,7 +396,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       pass_cuts[4] = 1;
     }
     // Number of bjets cut
-    if ((pass_cuts[4] == 1) && (n_b_jets_tc == 0)){
+    if ((pass_cuts[4] == 1) && (nBJets == 0)){
       pass_cuts[5] = 1;
     }
     // Jets with min pt
@@ -403,7 +404,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       pass_cuts[6] = 1;
     }
     // Opposite hemisfere in dijet cut
-    if((pass_cuts[6] == 1) && ((Jet_leading_vec_tc.Eta()*Jet_sleading_vec_tc.Eta()) < 0) ){
+    if((pass_cuts[6] == 1) && ((jetLeadingVec.Eta()*jetSleadingVec.Eta()) < 0) ){
       pass_cuts[7] = 1;
     }
     // Delta eta in dijet pair cut
@@ -426,13 +427,13 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       if (pass_cuts[i] == 1){
 
 	_hmap_Nevents[i]->Fill(1.0);
-        if(Jet_leading_vec_tc.Pt() > 1.0){
-	  _hmap_lead_jet_pT[i]->Fill(Jet_leading_vec_tc.Pt());
-	  _hmap_lead_jet_eta[i]->Fill(Jet_leading_vec_tc.Eta());
-	  _hmap_lead_jet_phi[i]->Fill(Jet_leading_vec_tc.Phi());
-	  _hmap_slead_jet_pT[i]->Fill(Jet_sleading_vec_tc.Pt());
-	  _hmap_slead_jet_eta[i]->Fill(Jet_sleading_vec_tc.Eta());
-	  _hmap_slead_jet_phi[i]->Fill(Jet_sleading_vec_tc.Phi());
+        if(jetLeadingVec.Pt() > 1.0){
+	  _hmap_lead_jet_pT[i]->Fill(jetLeadingVec.Pt());
+	  _hmap_lead_jet_eta[i]->Fill(jetLeadingVec.Eta());
+	  _hmap_lead_jet_phi[i]->Fill(jetLeadingVec.Phi());
+	  _hmap_slead_jet_pT[i]->Fill(jetSleadingVec.Pt());
+	  _hmap_slead_jet_eta[i]->Fill(jetSleadingVec.Eta());
+	  _hmap_slead_jet_phi[i]->Fill(jetSleadingVec.Phi());
         }
 	if(Tau1HadTLV.Pt() > 1.0){
 	  _hmap_tau1_pT[i]->Fill(Tau1HadTLV.Pt());
