@@ -426,7 +426,6 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
 
       if (pass_cuts[i] == 1){
 
-	_hmap_Nevents[i]->Fill(1.0);
         if(jetLeadingVec.Pt() > 1.0){
 	  _hmap_lead_jet_pT[i]->Fill(jetLeadingVec.Pt());
 	  _hmap_lead_jet_eta[i]->Fill(jetLeadingVec.Eta());
