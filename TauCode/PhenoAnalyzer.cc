@@ -61,7 +61,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
   double b_jet_pt_min     = params->GetValue ("b_jet_pt_min", 30.0);
   double DR_jet_lep_max  = params->GetValue ("DR_jet_lep_max", 0.3);
   double jet_min_pt       = params->GetValue ("jet_min_pt", 15);
-  double VBF_jetPt_min = params->GetValue("VBF_jetPt_min", 40.0)
+  double VBF_jetPt_min = params->GetValue("VBF_jetPt_min", 40.0);
   double tau_pt_cut       = params->GetValue("tau_pt_cut", 20.);
   double tau_eta_cut      = params->GetValue ("tau_eta_cut", 2.1);
   double deltaEta_diJet_cut = params->GetValue("deltaEta_diJet_cut", 3.8);
