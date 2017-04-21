@@ -347,7 +347,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     //Check for jets pt condition
     int jet_pt_condition = 0;
     for (int i = 0; i < jetsList.size(); i++) {
-      if(jetsList[i].Pt() > 30.){
+      if(jetsList[i].Pt() > 40.){
         jet_pt_condition++;
       }
     }
@@ -406,7 +406,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       pass_cuts[6] = 1;
     }
     //Transverse mass cut
-    if((pass_cuts[6] ==) && (transmass > transmass_cut)){
+    if((pass_cuts[6] == 1) && (transmass > transmass_cut)){
       pass_cuts[7] = 1;
     }
     // Opposite hemisfere in dijet cut
