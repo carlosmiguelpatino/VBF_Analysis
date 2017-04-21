@@ -1,6 +1,6 @@
 // For Jets
 lead_jet_pt: 100.0
-jet_min_pt: 15.0
+jet_min_pt: 40.0
 jet_eta_max: 2.5
 b_jet_pt_min: 30.0
 DR_jet_lep_max: 0.3
@@ -14,6 +14,7 @@ tau_pt_cut: 50.0
 tau_eta_cut: 2.1
 deltaEta_diJet_cut: 4.2
 diJetmass_cut: 800.0
+VBF_jetPt_min = 40.0
 tauMass_cut: 100.0
 MET_cut: 50.0
 transmass_cut: 50.0

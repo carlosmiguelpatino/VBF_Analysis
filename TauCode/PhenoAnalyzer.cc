@@ -61,6 +61,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
   double b_jet_pt_min     = params->GetValue ("b_jet_pt_min", 30.0);
   double DR_jet_lep_max  = params->GetValue ("DR_jet_lep_max", 0.3);
   double jet_min_pt       = params->GetValue ("jet_min_pt", 15);
+  double VBF_jetPt_min = params->GetValue("VBF_jetPt_min", 40.0)
   double tau_pt_cut       = params->GetValue("tau_pt_cut", 20.);
   double tau_eta_cut      = params->GetValue ("tau_eta_cut", 2.1);
   double deltaEta_diJet_cut = params->GetValue("deltaEta_diJet_cut", 3.8);
@@ -284,14 +285,14 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       if (jetsList.size() < 4){break;}
       Jet_1 = jetsList[k];
 
-      if ((Jet_1.Pt() < 30.0) || (abs(Jet_1.Eta()) > 5.0)){continue;}
+      if ((Jet_1.Pt() < VBF_jetPt_min) || (abs(Jet_1.Eta()) > 5.0)){continue;}
 
       for (int sj = k + 1; sj < jetsList.size(); sj++){
 
         if (sj != k){
 
           Jet_2 = jetsList[sj];
-          if ((Jet_2.Pt() < 30.0) || (abs(Jet_2.Eta()) > 5.0)){continue;}
+          if ((Jet_2.Pt() < VBF_jetPt_min) || (abs(Jet_2.Eta()) > 5.0)){continue;}
           double DiJetMass = (Jet_1+Jet_2).M();
           if (DiJetMass > DiJetMass_final){
             DiJetMass_final = DiJetMass;
@@ -347,7 +348,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     //Check for jets pt condition
     int jet_pt_condition = 0;
     for (int i = 0; i < jetsList.size(); i++) {
-      if(jetsList[i].Pt() > 40.){
+      if(jetsList[i].Pt() > jet_min_pt){
         jet_pt_condition++;
       }
     }
