@@ -354,6 +354,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     }
 
     double delta_eta_diJet = abs(jetLeadingVec.Eta()-jetSleadingVec.Eta());
+    double tauMass = (Tau1HadTLV + Tau2HadTLV).M();
     transmass = TMath::Sqrt(TMath::Abs(2*Tau1HadTLV.Pt()*MET*(1-TMath::Cos(normalizedDphi(Tau1HadTLV.Phi() - Met_phi)))));
     double ht = 0.;
     double st = 0.;
@@ -391,7 +392,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       pass_cuts[2] = 1;
     }
     // Min tau system mass
-    if ((pass_cuts[2] == 1) && ((Tau1HadTLV + Tau2HadTLV).M() > tauMass_cut)){
+    if ((pass_cuts[2] == 1) && (tauMass > tauMass_cut)){
       pass_cuts[3] = 1;
     }
     //Min MET cut
@@ -453,6 +454,9 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
 	  _hmap_tau2_eta[i]->Fill(Tau2HadTLV.Eta());
 	  _hmap_tau2_phi[i]->Fill(Tau2HadTLV.Phi());
         }
+  if(tauMass > 0){_hmap_tauMass[i]->Fill(tauMass);}
+  if(MET > 0){_hmap_MET[i]->Fill(MET);}
+  if(transmass > 0){_hmap_transmass[i]->Fill(transmass);}
 	if(ht > 0.0){_hmap_ht[i]->Fill(ht);}
         if(st > 0.0){_hmap_st[i]->Fill(st);}
 	if(DiJetMass_final > 0.0){_hmap_dijet_mass[i]->Fill(DiJetMass_final);}
@@ -480,10 +484,14 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       _hmap_tau2_pT[d]->Write();
       _hmap_tau2_eta[d]->Write();
       _hmap_tau2_phi[d]->Write();
+      _hmap_tauMass[d]->Write();
+      _hmap_MET[d]->Write();
+      _hmap_transmass[d]->Write();
       _hmap_ht[d]->Write();
       _hmap_st[d]->Write();
       _hmap_dijet_mass[d]->Write();
       _hmap_dijet_deltaEta[d]->Write();
+
     }
   theFile->Close();
 }
@@ -531,6 +539,9 @@ void PhenoAnalysis::crateHistoMasps (int directories)
       _hmap_tau2_pT[i]       = new TH1F("tau2Pt",        "p_{T}(#tau_{2})", 200, 0., 2000.);
       _hmap_tau2_eta[i]      = new TH1F("tau2Eta",       "#eta(#tau_{2})", 50, -3.5, 3.5);
       _hmap_tau2_phi[i]      = new TH1F("tau2Phi",       "#phi(#tau_{2})", 70, -3.6, 3.6);
+      _hmap_tauMass[i]       = new TH1F("tauMass", "m(#t)", 100, 0, 1000);
+      _hmap_MET[i]           = new TH1F("MET", "MET", 100, 0, 1000);
+      _hmap_transmass[i]     = new TH1F("transMass", "Transverse Mass", 100, 0, 1000);
       _hmap_ht[i]            = new TH1F("HT", "H_{T}", 100, 0, 5000);
       _hmap_st[i]            = new TH1F("ST", "S_{T}", 100, 0, 5000);
       _hmap_dijet_mass[i]     = new TH1F("diJetMass", "diJet_Mass", 100, 0, 5000);

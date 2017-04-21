@@ -68,6 +68,9 @@ public :
    std::map<unsigned int, TH1*> _hmap_st;
    std::map<unsigned int, TH1*> _hmap_dijet_mass;
    std::map<unsigned int, TH1*> _hmap_dijet_deltaEta;
+   std::map<unsigned int, TH1*> _hmap_tauMass;
+   std::map<unsigned int, TH1*> _hmap_MET;
+   std::map<unsigned int, TH1*> _hmap_transmass;
 
    //2D plots
    std::map<unsigned int, TH2*> _hmap_jet_met_metDphi;
