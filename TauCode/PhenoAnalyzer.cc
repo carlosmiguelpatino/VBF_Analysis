@@ -21,17 +21,19 @@ int main(int argc, char *argv[]) {
   TChain chain("Delphes");
   chain.Add(argv[1]);
   TFile * HistoOutputFile = new TFile(argv[2], "RECREATE");
-  int nDir = 9;
+  int nDir = 11;
   TDirectory *theDirectory[nDir];
   theDirectory[0]  = HistoOutputFile->mkdir("No_cuts");
   theDirectory[1]  = HistoOutputFile->mkdir("Taus_pT_min");
   theDirectory[2]  = HistoOutputFile->mkdir("Taus_eta_min");
-  theDirectory[3]  = HistoOutputFile->mkdir("MET");
-  theDirectory[4]  = HistoOutputFile->mkdir("N_bjets");
-  theDirectory[5]  = HistoOutputFile->mkdir("Jets_pT_min");
-  theDirectory[6]  = HistoOutputFile->mkdir("VBF_jets_opposite_hemispheres");
-  theDirectory[7]  = HistoOutputFile->mkdir("VBF_jets_delta");
-  theDirectory[8]  = HistoOutputFile->mkdir("VBF_diJetMass");
+  theDirectory[3]  = HistoOutputFile->mkdir("Taus_mass_min");
+  theDirectory[4]  = HistoOutputFile->mkdir("MET");
+  theDirectory[5]  = HistoOutputFile->mkdir("N_bjets");
+  theDirectory[6]  = HistoOutputFile->mkdir("Jets_pT_min");
+  theDirectory[7]  = HistoOutputFile->mkdir("Transmass_min");
+  theDirectory[8]  = HistoOutputFile->mkdir("VBF_jets_opposite_hemispheres");
+  theDirectory[9]  = HistoOutputFile->mkdir("VBF_jets_delta");
+  theDirectory[10]  = HistoOutputFile->mkdir("VBF_diJetMass");
   PhenoAnalysis BSM_analysis(chain, HistoOutputFile, theDirectory, nDir);
 
 }
@@ -65,6 +67,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
   double diJetmass_cut    = params->GetValue("diJetmass_cut", 500.0);
   double tauMass_cut = params->GetValue("tauMass_cut", 100.0);
   double MET_cut = params->GetValue("MET_cut", 50.0);
+  double transmass_cut = params->GetValue("transmass_cut", 50.0);
   crateHistoMasps(nDir);
 
   ExRootTreeReader *treeReader = new ExRootTreeReader(&chain);
@@ -386,29 +389,37 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     if((pass_cuts[1] == 1) && (abs(Tau1HadTLV.Eta()) < tau_eta_cut) && (abs(Tau2HadTLV.Eta()) < tau_eta_cut)){
       pass_cuts[2] = 1;
     }
-    //Min MET cut
-    if ((pass_cuts[2] == 1) && (MET > MET_cut)){
+    // Min tau system mass
+    if ((pass_cuts[2] == 1) && ((Tau1HadTLV + Tau2HadTLV).M() > tauMass_cut)){
       pass_cuts[3] = 1;
     }
-    // Number of bjets cut
-    if ((pass_cuts[3] == 1) && (nBJets == 0)){
+    //Min MET cut
+    if ((pass_cuts[3] == 1) && (MET > MET_cut)){
       pass_cuts[4] = 1;
     }
-    // Jets with min pt
-    if ((pass_cuts[4] == 1) && (jet_pt_condition > 1)){
+    // Number of bjets cut
+    if ((pass_cuts[4] == 1) && (nBJets == 0)){
       pass_cuts[5] = 1;
     }
-    // Opposite hemisfere in dijet cut
-    if((pass_cuts[5] == 1) && ((jetLeadingVec.Eta()*jetSleadingVec.Eta()) < 0) ){
+    // Jets with min pt
+    if ((pass_cuts[5] == 1) && (jet_pt_condition > 1)){
       pass_cuts[6] = 1;
     }
-    // Delta eta in dijet pair cut
-    if ((pass_cuts[6] == 1) && (delta_eta_diJet > deltaEta_diJet_cut)){
+    //Transverse mass cut
+    if((pass_cuts[6] ==) && (transmass > transmass_cut)){
       pass_cuts[7] = 1;
     }
-    //Min DiJetMass cut
-    if ((pass_cuts[7] == 1) && (DiJetMass_final > diJetmass_cut)){
+    // Opposite hemisfere in dijet cut
+    if((pass_cuts[7] == 1) && ((jetLeadingVec.Eta()*jetSleadingVec.Eta()) < 0) ){
       pass_cuts[8] = 1;
+    }
+    // Delta eta in dijet pair cut
+    if ((pass_cuts[8] == 1) && (delta_eta_diJet > deltaEta_diJet_cut)){
+      pass_cuts[9] = 1;
+    }
+    //Min DiJetMass cut
+    if ((pass_cuts[9] == 1) && (DiJetMass_final > diJetmass_cut)){
+      pass_cuts[10] = 1;
     }
 
 
