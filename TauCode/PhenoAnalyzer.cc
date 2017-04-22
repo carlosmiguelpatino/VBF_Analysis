@@ -78,6 +78,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
   TClonesArray *branchElectron = treeReader->UseBranch("Electron");
   TClonesArray *branchMuon = treeReader->UseBranch("Muon");
   TClonesArray *branchMissingET = treeReader->UseBranch("MissingET");
+  TClonesArray *branchTrack = treeReader->UseBranch("Track");
   MissingET *METpointer;
 
   for(Int_t entry = 0; entry < numberOfEntries; ++entry){
@@ -99,6 +100,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     TLorentzVector Tau2HadTLV (0., 0., 0., 0.);
     TLorentzVector Tau3HadTLV (0., 0., 0., 0.);
 
+    Track *track_tau1;
     vector<TLorentzVector> jetsList;
 
     bool fill_tau1 = false;
@@ -275,6 +277,20 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
         Tau2HadTLV = tmp_tlv;
       }
     }
+
+    double tau1_track_DR_min = 999.;
+    double tau1_track_DR;
+    //Search tau track
+    for(int i = 0; i < branchTrack->GetEntriesFast(); i++){
+      Track *track = (Track*) branchTrack->At(i);
+      tau1_track_DR = calculate_deltaR(Tau1HadTLV, track);
+
+      if(tau1_track_DR < tau1_track_DR_min){
+        tau1_track_DR_min = tau1_track_DR;
+        track_tau1 = track;
+      }
+    }
+
 
     int dijet_index1 = 0;
     int dijet_index2 = 0;
@@ -510,6 +526,16 @@ double PhenoAnalysis::calculateE(double eta, double pt, double mass){
 
   return e;
 
+}
+
+double PhenoAnalysis::calculate_deltaR(TLorentzVector vector,  Track* track){
+
+  double eta1 = vector.Eta();
+  double phi1 = vector.Phi();
+  double eta2 = track->Eta;
+  double phi2 = track->Phi;
+  double deltaR = sqrt(pow(eta1-eta2,2) + pow(phi1-phi2,2));
+  return deltaR;
 }
 
 double PhenoAnalysis::normalizedDphi(double phi){

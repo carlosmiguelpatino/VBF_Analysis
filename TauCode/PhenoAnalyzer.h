@@ -45,6 +45,7 @@ public :
    bool overlapingObjects(double, double, double, double, double);
    double calculateE(double, double, double);
    double normalizedDphi(double);
+   double calculate_deltaR(TLorentzVector,  Track*);
 
    // For Jets
    std::map<unsigned int, TH1*> _hmap_Nevents;
