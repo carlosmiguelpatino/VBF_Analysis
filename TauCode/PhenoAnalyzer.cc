@@ -21,19 +21,20 @@ int main(int argc, char *argv[]) {
   TChain chain("Delphes");
   chain.Add(argv[1]);
   TFile * HistoOutputFile = new TFile(argv[2], "RECREATE");
-  int nDir = 11;
+  int nDir = 12;
   TDirectory *theDirectory[nDir];
   theDirectory[0]  = HistoOutputFile->mkdir("No_cuts");
   theDirectory[1]  = HistoOutputFile->mkdir("Taus_pT_min");
   theDirectory[2]  = HistoOutputFile->mkdir("Taus_eta_min");
-  theDirectory[3]  = HistoOutputFile->mkdir("Taus_mass_min");
-  theDirectory[4]  = HistoOutputFile->mkdir("MET");
-  theDirectory[5]  = HistoOutputFile->mkdir("N_bjets");
-  theDirectory[6]  = HistoOutputFile->mkdir("Jets_pT_min");
-  theDirectory[7]  = HistoOutputFile->mkdir("Transmass_min");
-  theDirectory[8]  = HistoOutputFile->mkdir("VBF_jets_opposite_hemispheres");
-  theDirectory[9]  = HistoOutputFile->mkdir("VBF_jets_delta");
-  theDirectory[10]  = HistoOutputFile->mkdir("VBF_diJetMass");
+  theDirectory[3]  = HistoOutputFile->mkdir("Impact_parameter_track1_min");
+  theDirectory[4]  = HistoOutputFile->mkdir("Taus_mass_min");
+  theDirectory[5]  = HistoOutputFile->mkdir("MET");
+  theDirectory[6]  = HistoOutputFile->mkdir("N_bjets");
+  theDirectory[7]  = HistoOutputFile->mkdir("Jets_pT_min");
+  theDirectory[8]  = HistoOutputFile->mkdir("Transmass_min");
+  theDirectory[9]  = HistoOutputFile->mkdir("VBF_jets_opposite_hemispheres");
+  theDirectory[10]  = HistoOutputFile->mkdir("VBF_jets_delta");
+  theDirectory[11]  = HistoOutputFile->mkdir("VBF_diJetMass");
   PhenoAnalysis BSM_analysis(chain, HistoOutputFile, theDirectory, nDir);
 
 }
@@ -69,6 +70,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
   double tauMass_cut = params->GetValue("tauMass_cut", 100.0);
   double MET_cut = params->GetValue("MET_cut", 50.0);
   double transmass_cut = params->GetValue("transmass_cut", 50.0);
+  double ipTau1_cut = params->GetValue("impact_parameter_cut", 0.15);
   crateHistoMasps(nDir);
 
   ExRootTreeReader *treeReader = new ExRootTreeReader(&chain);
@@ -407,37 +409,41 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     if((pass_cuts[1] == 1) && (abs(Tau1HadTLV.Eta()) < tau_eta_cut) && (abs(Tau2HadTLV.Eta()) < tau_eta_cut)){
       pass_cuts[2] = 1;
     }
-    // Min tau system mass
-    if ((pass_cuts[2] == 1) && (tauMass > tauMass_cut)){
+    //Min impact parameter tau1 cut
+    if((pass_cuts[2] == 1) && (abs(track_tau1->Dxy) > ipTau1_cut)){
       pass_cuts[3] = 1;
     }
-    //Min MET cut
-    if ((pass_cuts[3] == 1) && (MET > MET_cut)){
+    // Min tau system mass
+    if ((pass_cuts[3] == 1) && (tauMass > tauMass_cut)){
       pass_cuts[4] = 1;
     }
-    // Number of bjets cut
-    if ((pass_cuts[4] == 1) && (nBJets == 0)){
+    //Min MET cut
+    if ((pass_cuts[4] == 1) && (MET > MET_cut)){
       pass_cuts[5] = 1;
     }
-    // Jets with min pt
-    if ((pass_cuts[5] == 1) && (jet_pt_condition > 1)){
+    // Number of bjets cut
+    if ((pass_cuts[5] == 1) && (nBJets == 0)){
       pass_cuts[6] = 1;
     }
-    //Transverse mass cut
-    if((pass_cuts[6] == 1) && (transmass > transmass_cut)){
+    // Jets with min pt
+    if ((pass_cuts[6] == 1) && (jet_pt_condition > 1)){
       pass_cuts[7] = 1;
     }
-    // Opposite hemisfere in dijet cut
-    if((pass_cuts[7] == 1) && ((jetLeadingVec.Eta()*jetSleadingVec.Eta()) < 0) ){
+    //Transverse mass cut
+    if((pass_cuts[7] == 1) && (transmass > transmass_cut)){
       pass_cuts[8] = 1;
     }
-    // Delta eta in dijet pair cut
-    if ((pass_cuts[8] == 1) && (delta_eta_diJet > deltaEta_diJet_cut)){
+    // Opposite hemisfere in dijet cut
+    if((pass_cuts[8] == 1) && ((jetLeadingVec.Eta()*jetSleadingVec.Eta()) < 0) ){
       pass_cuts[9] = 1;
     }
-    //Min DiJetMass cut
-    if ((pass_cuts[9] == 1) && (DiJetMass_final > diJetmass_cut)){
+    // Delta eta in dijet pair cut
+    if ((pass_cuts[9] == 1) && (delta_eta_diJet > deltaEta_diJet_cut)){
       pass_cuts[10] = 1;
+    }
+    //Min DiJetMass cut
+    if ((pass_cuts[10] == 1) && (DiJetMass_final > diJetmass_cut)){
+      pass_cuts[11] = 1;
     }
 
 
