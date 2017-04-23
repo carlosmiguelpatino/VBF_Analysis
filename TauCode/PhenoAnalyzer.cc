@@ -70,7 +70,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
   double tauMass_cut = params->GetValue("tauMass_cut", 100.0);
   double MET_cut = params->GetValue("MET_cut", 50.0);
   double transmass_cut = params->GetValue("transmass_cut", 50.0);
-  double ipTau1_cut = params->GetValue("impact_parameter_cut", 0.15);
+  double ipTau1_cut = params->GetValue("ipTau1_cut", 0.15);
   crateHistoMasps(nDir);
 
   ExRootTreeReader *treeReader = new ExRootTreeReader(&chain);
@@ -373,6 +373,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
 
     double delta_eta_diJet = abs(jetLeadingVec.Eta()-jetSleadingVec.Eta());
     double tauMass = (Tau1HadTLV + Tau2HadTLV).M();
+    double ipTau1 = track_tau1->Dxy;
     transmass = TMath::Sqrt(TMath::Abs(2*Tau1HadTLV.Pt()*MET*(1-TMath::Cos(normalizedDphi(Tau1HadTLV.Phi() - Met_phi)))));
     double ht = 0.;
     double st = 0.;
@@ -410,7 +411,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       pass_cuts[2] = 1;
     }
     //Min impact parameter tau1 cut
-    if((pass_cuts[2] == 1) && (abs(track_tau1->Dxy) > ipTau1_cut)){
+    if((pass_cuts[2] == 1) && (abs(ipTau1) > ipTau1_cut)){
       pass_cuts[3] = 1;
     }
     // Min tau system mass
@@ -476,6 +477,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
 	  _hmap_tau2_eta[i]->Fill(Tau2HadTLV.Eta());
 	  _hmap_tau2_phi[i]->Fill(Tau2HadTLV.Phi());
         }
+  if(ipTau1 > 0){_hmap_ipTau1[i]->Fill(ipTau1);}
   if(tauMass > 0){_hmap_tauMass[i]->Fill(tauMass);}
   if(MET > 0){_hmap_MET[i]->Fill(MET);}
   if(transmass > 0){_hmap_transmass[i]->Fill(transmass);}
@@ -506,6 +508,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       _hmap_tau2_pT[d]->Write();
       _hmap_tau2_eta[d]->Write();
       _hmap_tau2_phi[d]->Write();
+      _hmap_ipTau1[d]->Write();
       _hmap_tauMass[d]->Write();
       _hmap_MET[d]->Write();
       _hmap_transmass[d]->Write();
@@ -571,6 +574,7 @@ void PhenoAnalysis::crateHistoMasps (int directories)
       _hmap_tau2_pT[i]       = new TH1F("tau2Pt",        "p_{T}(#tau_{2})", 200, 0., 2000.);
       _hmap_tau2_eta[i]      = new TH1F("tau2Eta",       "#eta(#tau_{2})", 50, -3.5, 3.5);
       _hmap_tau2_phi[i]      = new TH1F("tau2Phi",       "#phi(#tau_{2})", 70, -3.6, 3.6);
+      _hmap_ipTau1[i]        = new TH1F("tau1ImpactParameter", "ip(#tau)", 100, 0, 1);
       _hmap_tauMass[i]       = new TH1F("tauMass", "m(#t)", 100, 0, 1000);
       _hmap_MET[i]           = new TH1F("MET", "MET", 100, 0, 1000);
       _hmap_transmass[i]     = new TH1F("transMass", "Transverse Mass", 100, 0, 1000);

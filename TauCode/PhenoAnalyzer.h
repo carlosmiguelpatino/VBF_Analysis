@@ -64,6 +64,8 @@ public :
    std::map<unsigned int, TH1*> _hmap_tau2_eta;
    std::map<unsigned int, TH1*> _hmap_tau2_phi;
    std::map<unsigned int, TH1*> _hmap_n_tau;
+   std::map<unsigned int, TH1*> _hmap_ipTau1;
+
    // Topology
    std::map<unsigned int, TH1*> _hmap_ht;
    std::map<unsigned int, TH1*> _hmap_st;
