@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{subcaption}
+\usepackage[titletoc]{appendix}
 %\usepackage{subfig} %para poner subfiguras
 %\usepackage{subcaption}
 \graphicspath{{Figures/}{Figures/Plots}} %En qué carpeta están las imágenes
@@ -184,6 +185,7 @@
 \include{Introduction/introduction}
 %\thispagestyle{empty}
 \include{Objectives/objectives}
+\include{NeutrinoMass/neutrinoMass}
 %\thispagestyle{empty}
 \include{ComputationalResources/computationalResources}
 \include{Simulation/simulation}
@@ -200,14 +202,18 @@
 
 %\appendix % Los siguientes capítulos son apéndices
 
+\begin{appendices}
+
 %  Incluye los apéndices en el folder de apéndices
 
 %\include{Apendices/Ap}
-%\thispagestyle{empty}
-%\include{Apendices/AppendixB}
+\thispagestyle{empty}
+\include{Apendices/AppendixA}
 %\include{Apendices/AppendixC}
 
 %\addtocontents{toc}{\vspace{2em}} % Agrega espacio en la toc
+
+\end{appendices}
 
 
 %----------------------------------------------------------------------------------------
