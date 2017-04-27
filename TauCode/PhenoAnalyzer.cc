@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
   theDirectory[2]  = HistoOutputFile->mkdir("Taus_eta_min");
   theDirectory[3]  = HistoOutputFile->mkdir("Impact_parameter_track1_min");
   theDirectory[4]  = HistoOutputFile->mkdir("Taus_mass_min");
-  theDirectory[5]  = HistoOutputFile->mkdir("MET");
+  theDirectory[5]  = HistoOutputFile->mkdir("MET_min");
   theDirectory[6]  = HistoOutputFile->mkdir("N_bjets");
   theDirectory[7]  = HistoOutputFile->mkdir("Jets_pT_min");
   theDirectory[8]  = HistoOutputFile->mkdir("Transmass_min");
@@ -410,7 +410,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     if((pass_cuts[1] == 1) && (abs(Tau1HadTLV.Eta()) < tau_eta_cut) && (abs(Tau2HadTLV.Eta()) < tau_eta_cut)){
       pass_cuts[2] = 1;
     }
-    //Min impact parameter tau1 cut
+    //Min impact para meter tau1 cut
     if((pass_cuts[2] == 1) && (abs(ipTau1) > ipTau1_cut)){
       pass_cuts[3] = 1;
     }
@@ -477,7 +477,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
 	  _hmap_tau2_eta[i]->Fill(Tau2HadTLV.Eta());
 	  _hmap_tau2_phi[i]->Fill(Tau2HadTLV.Phi());
         }
-  if(ipTau1 > 0){_hmap_ipTau1[i]->Fill(ipTau1);}
+  if(ipTau1 > 0){_hmap_ipTau1[i]->Fill(abs(ipTau1));}
   if(tauMass > 0){_hmap_tauMass[i]->Fill(tauMass);}
   if(MET > 0){_hmap_MET[i]->Fill(MET);}
   if(transmass > 0){_hmap_transmass[i]->Fill(transmass);}
