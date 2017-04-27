@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.6)  23 APR 2017 22:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.6)  27 APR 2017 01:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -527,6 +527,9 @@ Package caption Info: float package is loaded.
 \c@subfigure=\count107
 \c@subtable=\count108
 )
+(/usr/share/texlive/texmf-dist/tex/latex/carlisle/slashed.sty
+Package: slashed 1997/01/16 v0.01 Feynman Slashed Character Notation (DPC)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
 \c@@pps=\count109
@@ -703,20 +706,20 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (./DistributionAnalysis/distributionAnalysis.aux) (./Apendices/AppendixA.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -784,7 +787,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 28.
+Package hyperref Info: Link coloring OFF on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -794,25 +797,25 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count128
 )
-LaTeX Info: Redefining \ref on input line 28.
-LaTeX Info: Redefining \pageref on input line 28.
-LaTeX Info: Redefining \nameref on input line 28.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
 
-<Figures/logo-uniandes.png, id=64, 180.675pt x 214.8025pt>
+<Figures/logo-uniandes.png, id=72, 180.675pt x 214.8025pt>
 File: Figures/logo-uniandes.png Graphic file (type png)
 
 <use Figures/logo-uniandes.png>
-Package pdftex.def Info: Figures/logo-uniandes.png used on input line 73.
+Package pdftex.def Info: Figures/logo-uniandes.png used on input line 78.
 (pdftex.def)             Requested size: 72.2687pt x 85.91946pt.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 79.
+(Font)              using `OT1/cmr/bx/n' instead on input line 84.
 
 [1
 
@@ -855,7 +858,7 @@ l.6
 
 
 
-] <Figures/Feynman_W.png, id=146, 796.9775pt x 528.97626pt>
+] <Figures/Feynman_W.png, id=156, 796.9775pt x 528.97626pt>
 File: Figures/Feynman_W.png Graphic file (type png)
 
 <use Figures/Feynman_W.png>
@@ -887,52 +890,52 @@ Chapter 3.
 
 
 
-]) [7]
+] [7] [8]) [9]
 \openout2 = `ComputationalResources/computationalResources.aux'.
 
  (./ComputationalResources/computationalResources.tex
 Chapter 4.
-[8
-
-
-
-]) [9]
-\openout2 = `Simulation/simulation.aux'.
-
- (./Simulation/simulation.tex
-Chapter 5.
 [10
 
 
 
-] <Figures/Feynman_hnZ.PNG, id=217, 518.6878pt x 405.01312pt>
+]) [11]
+\openout2 = `Simulation/simulation.aux'.
+
+ (./Simulation/simulation.tex
+Chapter 5.
+[12
+
+
+
+] <Figures/Feynman_hnZ.PNG, id=270, 518.6878pt x 405.01312pt>
 File: Figures/Feynman_hnZ.PNG Graphic file (type png)
 
 <use Figures/Feynman_hnZ.PNG>
 Package pdftex.def Info: Figures/Feynman_hnZ.PNG used on input line 20.
 (pdftex.def)             Requested size: 233.40735pt x 182.25421pt.
 
-<Figures/Feynman_hnGamma.PNG, id=223, 519.44063pt x 392.96812pt>
+<Figures/Feynman_hnGamma.PNG, id=276, 519.44063pt x 392.96812pt>
 File: Figures/Feynman_hnGamma.PNG Graphic file (type png)
 
 <use Figures/Feynman_hnGamma.PNG>
 Package pdftex.def Info: Figures/Feynman_hnGamma.PNG used on input line 29.
 (pdftex.def)             Requested size: 233.74612pt x 176.83401pt.
- [11 <./Figures/Feynman_hnZ.PNG>]) [12 <./Figures/Feynman_hnGamma.PNG>]
+ [13 <./Figures/Feynman_hnZ.PNG>]) [14 <./Figures/Feynman_hnGamma.PNG>]
 \openout2 = `Definitions/definitions.aux'.
 
  (./Definitions/definitions.tex
 Chapter 6.
-[13
+[15
 
 
 
-] [14]) [15]
+] [16]) [17]
 \openout2 = `DistributionAnalysis/distributionAnalysis.aux'.
 
  (./DistributionAnalysis/distributionAnalysis.tex
 Chapter 7.
-<Figures/Plots/tau2_eta_unitNC.pdf, id=259, 569.12625pt x 313.17pt>
+<Figures/Plots/tau2_eta_unitNC.pdf, id=314, 569.12625pt x 313.17pt>
 File: Figures/Plots/tau2_eta_unitNC.pdf Graphic file (type pdf)
 
 <use Figures/Plots/tau2_eta_unitNC.pdf>
@@ -940,7 +943,7 @@ Package pdftex.def Info: Figures/Plots/tau2_eta_unitNC.pdf used on input line 9
 .
 (pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
 
-<Figures/Plots/tau1_pt_unitNC.pdf, id=260, 569.12625pt x 313.17pt>
+<Figures/Plots/tau1_pt_unitNC.pdf, id=315, 569.12625pt x 313.17pt>
 File: Figures/Plots/tau1_pt_unitNC.pdf Graphic file (type pdf)
 
 <use Figures/Plots/tau1_pt_unitNC.pdf>
@@ -948,7 +951,7 @@ Package pdftex.def Info: Figures/Plots/tau1_pt_unitNC.pdf used on input line 16
 .
 (pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
 
-<Figures/Plots/ljet_pt_unitNC.pdf, id=263, 569.12625pt x 313.17pt>
+<Figures/Plots/ljet_pt_unitNC.pdf, id=318, 569.12625pt x 313.17pt>
 File: Figures/Plots/ljet_pt_unitNC.pdf Graphic file (type pdf)
 
 <use Figures/Plots/ljet_pt_unitNC.pdf>
@@ -956,7 +959,7 @@ Package pdftex.def Info: Figures/Plots/ljet_pt_unitNC.pdf used on input line 27
 .
 (pdftex.def)             Requested size: 161.50667pt x 88.87209pt.
 
-<Figures/Plots/sjet_pt_unitNC.pdf, id=264, 569.12625pt x 313.17pt>
+<Figures/Plots/sjet_pt_unitNC.pdf, id=319, 569.12625pt x 313.17pt>
 File: Figures/Plots/sjet_pt_unitNC.pdf Graphic file (type pdf)
 
 <use Figures/Plots/sjet_pt_unitNC.pdf>
@@ -969,139 +972,140 @@ Package pdftex.def Info: Figures/Plots/tau1_pt_unitNC.pdf used on input line 43
 .
 (pdftex.def)             Requested size: 161.50667pt x 88.87209pt.
 
-<Figures/Plots/tau2_pt_unitNC.pdf, id=265, 569.12625pt x 313.17pt>
+<Figures/Plots/tau2_pt_unitNC.pdf, id=320, 569.12625pt x 313.17pt>
 File: Figures/Plots/tau2_pt_unitNC.pdf Graphic file (type pdf)
 
 <use Figures/Plots/tau2_pt_unitNC.pdf>
 Package pdftex.def Info: Figures/Plots/tau2_pt_unitNC.pdf used on input line 51
 .
 (pdftex.def)             Requested size: 161.50667pt x 88.87209pt.
- [16
+ [18
 
 
 
-] [17 <./Figures/Plots/tau2_eta_unitNC.pdf, page is rotated 90 degrees> <./Figu
+] [19 <./Figures/Plots/tau2_eta_unitNC.pdf, page is rotated 90 degrees> <./Figu
 res/Plots/tau1_pt_unitNC.pdf, page is rotated 90 degrees>]
-<Figures/Plots/HT_unitNC.pdf, id=365, 569.12625pt x 313.17pt>
+<Figures/Plots/HT_unitNC.pdf, id=418, 569.12625pt x 313.17pt>
 File: Figures/Plots/HT_unitNC.pdf Graphic file (type pdf)
 
 <use Figures/Plots/HT_unitNC.pdf>
 Package pdftex.def Info: Figures/Plots/HT_unitNC.pdf used on input line 64.
 (pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
 
-<Figures/Plots/ST_unitNC.pdf, id=366, 569.12625pt x 313.17pt>
+<Figures/Plots/ST_unitNC.pdf, id=419, 569.12625pt x 313.17pt>
 File: Figures/Plots/ST_unitNC.pdf Graphic file (type pdf)
 
 <use Figures/Plots/ST_unitNC.pdf>
 Package pdftex.def Info: Figures/Plots/ST_unitNC.pdf used on input line 71.
 (pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
- [18 <./Figures/Plots/ljet_pt_unitNC.pdf, page is rotated 90 degrees> <./Figure
+ [20 <./Figures/Plots/ljet_pt_unitNC.pdf, page is rotated 90 degrees> <./Figure
 s/Plots/sjet_pt_unitNC.pdf, page is rotated 90 degrees> <./Figures/Plots/tau2_p
 t_unitNC.pdf, page is rotated 90 degrees>]
-[19 <./Figures/Plots/HT_unitNC.pdf, page is rotated 90 degrees> <./Figures/Plot
+[21 <./Figures/Plots/HT_unitNC.pdf, page is rotated 90 degrees> <./Figures/Plot
 s/ST_unitNC.pdf, page is rotated 90 degrees>]
-<Figures/Plots/HT_unitVBF.pdf, id=595, 569.12625pt x 313.17pt>
+<Figures/Plots/HT_unitVBF.pdf, id=648, 569.12625pt x 313.17pt>
 File: Figures/Plots/HT_unitVBF.pdf Graphic file (type pdf)
 
 <use Figures/Plots/HT_unitVBF.pdf>
 Package pdftex.def Info: Figures/Plots/HT_unitVBF.pdf used on input line 80.
 (pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
 
-<Figures/Plots/ST_unitVBF.pdf, id=596, 569.12625pt x 313.17pt>
+<Figures/Plots/ST_unitVBF.pdf, id=649, 569.12625pt x 313.17pt>
 File: Figures/Plots/ST_unitVBF.pdf Graphic file (type pdf)
 
 <use Figures/Plots/ST_unitVBF.pdf>
 Package pdftex.def Info: Figures/Plots/ST_unitVBF.pdf used on input line 88.
 (pdftex.def)             Requested size: 340.00969pt x 187.10541pt.
- [20 <./Figures/Plots/HT_unitVBF.pdf, page is rotated 90 degrees>]) [21 <./Figu
+ [22 <./Figures/Plots/HT_unitVBF.pdf, page is rotated 90 degrees>]) [23 <./Figu
 res/Plots/ST_unitVBF.pdf, page is rotated 90 degrees>]
 \openout2 = `Apendices/AppendixA.aux'.
 
  (./Apendices/AppendixA.tex
 Appendix A.
-[22
-
-
-
-]) [23]
-Underfull \hbox (badness 5878) in paragraph at lines 247--248
-\OT1/cmr/m/n/10.95 J., & Zgubi^^Tc, M. (2016). Vec-tor bo-son fu-sion searches
- []
-
-
-Underfull \hbox (badness 2418) in paragraph at lines 247--248
-\OT1/cmr/m/n/10.95 for dark mat-ter at the LHC. Phys-i-cal Re-view D, 93(11).
- []
-
 [24
 
 
 
+]) [25]
+Underfull \hbox (badness 5878) in paragraph at lines 252--253
+\OT1/cmr/m/n/10.95 J., & Zgubi^^Tc, M. (2016). Vec-tor bo-son fu-sion searches
+ []
+
+
+Underfull \hbox (badness 2418) in paragraph at lines 252--253
+\OT1/cmr/m/n/10.95 for dark mat-ter at the LHC. Phys-i-cal Re-view D, 93(11).
+ []
+
+[26
+
+
+
 ]
-Underfull \hbox (badness 2846) in paragraph at lines 251--252
+Underfull \hbox (badness 2846) in paragraph at lines 256--257
 []\OT1/cmr/m/n/10.95 Sj^^?ostrand, T., Ask, S., Chris-tiansen, J., Corke, R., D
 e-
  []
 
 
-Underfull \hbox (badness 4582) in paragraph at lines 251--252
+Underfull \hbox (badness 4582) in paragraph at lines 256--257
 \OT1/cmr/m/n/10.95 sai, N., & Il-ten, P. et al. (2015). An in-tro-duc-tion to
  []
 
 
-Underfull \hbox (badness 1675) in paragraph at lines 253--254
+Underfull \hbox (badness 1675) in paragraph at lines 258--259
 []\OT1/cmr/m/n/10.95 de Favereau, J., De-laere, C., Demin, P., Gi-ammanco, A.,
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 253--254
+Underfull \hbox (badness 1424) in paragraph at lines 258--259
 \OT1/cmr/m/n/10.95 lider ex-per-i-ment. Jour-nal Of High En-ergy Physics, 2014(
 2).
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 261.
-[25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 261.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 270.
+[27]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 270.
  (./main.aux (./Introduction/introduction.aux) (./Objectives/objectives.aux) (.
 /NeutrinoMass/neutrinoMass.aux)
 (./ComputationalResources/computationalResources.aux)
 (./Simulation/simulation.aux) (./Definitions/definitions.aux)
 (./DistributionAnalysis/distributionAnalysis.aux) (./Apendices/AppendixA.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 261.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 261.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 270.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 270.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D415C02C9447AA434594843A64843524;910.
+(rerunfilecheck)             Checksum: 8E4D1B0EB5C3E29BF454355C87E16385;1035.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 261.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 270.
  ) 
 Here is how much of TeX's memory you used:
- 8701 strings out of 494910
- 128061 string characters out of 6179837
- 227678 words of memory out of 5000000
- 11704 multiletter control sequences out of 15000+600000
- 13669 words of font info for 52 fonts, out of 8000000 for 9000
+ 8754 strings out of 494910
+ 128844 string characters out of 6179837
+ 228538 words of memory out of 5000000
+ 11735 multiletter control sequences out of 15000+600000
+ 15217 words of font info for 57 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 42i,7n,45p,1488b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,7n,45p,1488b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (28 pages, 416006 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (30 pages, 433492 bytes).
 PDF statistics:
- 777 PDF objects out of 1000 (max. 8388607)
- 485 compressed objects within 5 object streams
- 76 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 836 PDF objects out of 1000 (max. 8388607)
+ 540 compressed objects within 6 object streams
+ 90 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 
