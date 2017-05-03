@@ -1,0 +1,46 @@
+// ===== Commom flags =================================
+process: t\bar{t}-semi
+scaleFactor: 1.0
+scaleFactorError: 0.0
+// ====================================================
+
+// ===== Flags for NormalizeHistos.cpp ================
+rootfile: /home/carlosmiguelpatino/Documents/PhysicsPlotter_pheno/data/ttbar_semileptonico_isr_diJetmass_cut-850.root
+directory: No_cuts
+xsection: 159400.
+skimmingEff: 1.0
+skimmingEffError: 0.0
+luminosity: 50.
+isdata: False
+OutputFilePath: /home/carlosmiguelpatino/Documents/PhysicsPlotter_pheno
+NormOutputFileName: normalizedHistos_ttbar_semi.root
+NormToOneOutputFileName: normalizedToOneHistos_ttbar.root
+// ====================================================
+
+// ===== Flags for StackPlotter.cpp ===================
+usedata: False
+setLogScale: False
+isSignal: False
+Normalizedrootfile: INPUTDIREC/normalizedHistos_ttbar_semi.root
+applyScaleFactor: True
+rebinHistoName:
+rebinFactor: 1
+lineStyle: 1
+lineWidth: 1
+legend: t#bar{t}-semileptonic
+color: 6
+outputRootFileStackedHistos: StackedPlots.root
+logFilename: output_NormalizePlotter
+// ====================================================
+
+//======Flags for Limits
+
+inputDataDrivenBG: True
+
+//===== Flags for UnitPlotter =========================
+marketStyle: 24
+outputRootFileHistos: UnitPlots.root
+
+//====== Flags for EfficiencyPlotter =================
+NormalizedrootfileNum: INPUTDIRECNUM/normalizedHistos_ttbar.root
+NormalizedrootfileDen: INPUTDIRECDEN/normalizedHistos_ttbar.root
