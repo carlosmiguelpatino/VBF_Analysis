@@ -3,16 +3,15 @@
 
 using namespace std;
 
-void plotSignificance(string normalizedDirectories, const unsigned n_points, const unsigned initial_value){
+void plotSignificance(string normalizedDirectories, const unsigned n_points, const unsigned initial_value, const unsigned delta){
 
-  //string delta_names[]= {"38","39", "40", "41", "42", "43", "44", "45"};
-
-  double variable_values [] = {3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5};
+  double variable_values [n_points];
   double significance_values [n_points];
-  
+
   for (int i = 0; i < n_points; i++){
 
-    string variable_path = Form("%d", i + initial_value);
+    variable_values[i] = (i*delta) + initial_value;
+    string variable_path = Form("%d", (i*delta) + initial_value);
 
     string fileDY= normalizedDirectories +  variable_path + "/VBF_diJetMass/normalizedHistos_DYToLL.root";
     string fileW= normalizedDirectories +  variable_path + "/VBF_diJetMass/normalizedHistos_wjets.root";
@@ -46,7 +45,9 @@ void plotSignificance(string normalizedDirectories, const unsigned n_points, con
   TCanvas *c = new TCanvas;
 
   TGraph *g = new TGraph(n_points,variable_values,significance_values);
-  g->SetTitle("Significance");
+  g->SetTitle("Significance vs diJet Pair Mass");
+  g->GetXaxis()->SetTitle("m(jj)");
+  //g->GetYaxis()->SetTitle("Significance");
   g->Draw("AC*");
 
   TImage *img = TImage::Create();
