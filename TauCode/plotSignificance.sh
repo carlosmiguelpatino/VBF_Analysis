@@ -1,1 +1,1 @@
-root -l -b -q 'plotSignificance.cpp("'../massOptimization/normalizedHistos/normalized'", 15, 500, 50)'
+root -l -b -q 'plotSignificance.cpp("'../massOptimization2/normalizedHistos/normalized'", 11, 500, 100)'

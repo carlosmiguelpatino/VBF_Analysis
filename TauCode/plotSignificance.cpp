@@ -8,6 +8,8 @@ void plotSignificance(string normalizedDirectories, const unsigned n_points, con
   double variable_values [n_points];
   double significance_values [n_points];
 
+  std::cout << "Value,Significance" << '\n';
+
   for (int i = 0; i < n_points; i++){
 
     variable_values[i] = (i*delta) + initial_value;
@@ -39,6 +41,8 @@ void plotSignificance(string normalizedDirectories, const unsigned n_points, con
     double significance = signal_events/sqrt(nBackgrounds + signal_events);
 
     significance_values[i] = significance;
+
+    cout << (i*delta) + initial_value << "," <<significance << '\n';
 
   }
 

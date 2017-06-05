@@ -1,0 +1,14 @@
+
+Processing plotSignificance.cpp("../massOptimization2/normalizedHistos/normalized", 11, 500, 100)...
+Value,Significance
+500,0.0166198
+600,0.0166198
+700,0.0174642
+800,0.0184012
+900,0.0186111
+1000,0.0186453
+1100,0.0189989
+1200,0.027852
+1300,0.0314125
+1400,0.0315266
+1500,0.0332467

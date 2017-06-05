@@ -1,0 +1,38 @@
+// ===== Commom flags =================================
+process: signal
+scaleFactor: 1.0
+scaleFactorError: 0.0
+// ====================================================
+
+// ===== Flags for NormalizeHistos.cpp ================
+rootfile: /home/carlosmiguelpatino/Documents/PhysicsPlotter_pheno/data/signal_1p5TeV-diJetmass_cut-1500.root
+directory: No_cuts
+xsection: 0.2966
+skimmingEff: 1.0
+skimmingEffError: 0.0
+luminosity: 50.
+isdata: False
+OutputFilePath: /home/carlosmiguelpatino/Documents/PhysicsPlotter_pheno
+NormOutputFileName: normalizedHistos_signal.root
+NormToOneOutputFileName: normalizedToOneHistos_signal.root
+// ====================================================
+
+// ===== Flags for StackPlotter.cpp ===================
+usedata: False
+setLogScale: False
+isSignal: True
+Normalizedrootfile: INPUTDIREC/normalizedHistos_signal.root
+applyScaleFactor: False
+rebinHistoName:
+rebinFactor: 1
+lineStyle: 2
+lineWidth: 3
+legend: m(#nu_{H}) = 1.5 TeV
+color: 8
+outputRootFileStackedHistos: StackedPlots.root
+logFilename: output_NormalizePlotter
+// ====================================================
+
+//===== Flags for UnitPlotter =========================
+marketStyle: 20
+outputRootFileHistos: UnitPlots.root
