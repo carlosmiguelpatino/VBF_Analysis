@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
   TChain chain("Delphes");
   chain.Add(argv[1]);
   TFile * HistoOutputFile = new TFile(argv[2], "RECREATE");
-  int nDir = 12;
+  int nDir = 13;
   TDirectory *theDirectory[nDir];
   theDirectory[0]  = HistoOutputFile->mkdir("No_cuts");
   theDirectory[1]  = HistoOutputFile->mkdir("Taus_pT_min");
@@ -35,6 +35,7 @@ int main(int argc, char *argv[]) {
   theDirectory[9]  = HistoOutputFile->mkdir("VBF_jets_opposite_hemispheres");
   theDirectory[10]  = HistoOutputFile->mkdir("VBF_jets_delta");
   theDirectory[11]  = HistoOutputFile->mkdir("VBF_diJetMass");
+  theDirectory[12]  = HistoOutputFile->mkdir("nJets_Cut");
   PhenoAnalysis BSM_analysis(chain, HistoOutputFile, theDirectory, nDir);
 
 }
@@ -447,6 +448,9 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       pass_cuts[11] = 1;
     }
 
+    if ((pass_cuts[11] == 1) && (n_jets == 4)){
+      pass_cuts[12] = 1;
+    }
 
     //Fill histograms
     for (int i = 0; i < nDir; i++){
