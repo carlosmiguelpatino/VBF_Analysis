@@ -452,11 +452,11 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     for (int i = 0; i < nDir; i++){
 
       _hmap_Nevents[i]->Fill(0.0);
-      _hmap_n_jets[i]->Fill(n_jets);
-      _hmap_n_tau[i]->Fill(ntau_counter);
 
       if (pass_cuts[i] == 1){
 
+        _hmap_n_tau[i]->Fill(ntau_counter);
+        _hmap_n_jets[i]->Fill(n_jets);
         _hmap_Nevents[i]->Fill(1.0);
 
         if(jetLeadingVec.Pt() > 1.0){
@@ -566,7 +566,7 @@ void PhenoAnalysis::crateHistoMasps (int directories)
       _hmap_slead_jet_pT[i]   = new TH1F("jetSleadPt",    "p_{T} Sub-leading Jet", 200, 0., 2000.);
       _hmap_slead_jet_eta[i]  = new TH1F("jetSleadEta",   "#eta Sub-leading Jet", 50, -5.0, 5.0);
       _hmap_slead_jet_phi[i]  = new TH1F("jetSleadPhi",   "#phi Sub-leading Jet", 70, -3.6, 3.6);
-      _hmap_n_jets[i]        = new TH1F("nJets",         "N(jet)", 6, 0, 6);
+      _hmap_n_jets[i]        = new TH1F("nJets",         "N(jet)", 7, 0, 7);
       _hmap_n_tau[i]         = new TH1F("nTaus",          "N(#tau)", 4, 0, 4);
       _hmap_tau1_pT[i]       = new TH1F("tau1Pt",        "p_{T}(#tau_{1})", 200, 0., 2000.);
       _hmap_tau1_eta[i]      = new TH1F("tau1Eta",       "#eta(#tau_{1})", 50, -3.5, 3.5);
