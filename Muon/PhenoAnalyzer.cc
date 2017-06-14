@@ -59,6 +59,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
   double diJetmass_cut    = params->GetValue("diJetmass_cut", 500.0);
   double MET_cut = params->GetValue("MET_cut", 50.0);
   double transmass_cut = params->GetValue("transmass_cut", 50.0);
+  double VBF_jetPt_min = params->GetValue("VBF_jetPt_min", 40.0);
   crateHistoMasps(nDir);
 
   ExRootTreeReader *treeReader = new ExRootTreeReader(&chain);
@@ -75,8 +76,8 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     ////////////////Muon Channel///////////
     treeReader->ReadEntry(entry);
     int pass_cuts[nDir] = {0};
-    TLorentzVector Jet_leading_vec(0., 0., 0., 0.); //mc stands for muon channel
-    TLorentzVector Jet_sleading_vec(0., 0., 0., 0.);
+    TLorentzVector jetLeadingVec(0., 0., 0., 0.); //mc stands for muon channel
+    TLorentzVector jetSleadingVec(0., 0., 0., 0.);
 
     TLorentzVector Jet_1(0., 0., 0., 0.);
     TLorentzVector Jet_2(0., 0., 0., 0.);
@@ -101,7 +102,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     int njets_counter = 0;
     int nmuon_counter = 0;
     double DiJetMass_final = 100.;
-    int n_b_jets = 0;
+    int nBJets = 0;
     bool four_jets_condition = false;
 
     //Search for muons
@@ -176,7 +177,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
 
       Jet *jet = (Jet*) branchJet->At(l);
 
-      if(jet->BTag == 1){n_b_jets++;}
+      if(jet->BTag == 1){nBJets++;}
 
       double jet_i_energy = calculateE(jet->Eta, jet->PT, jet->Mass);
       jet_i.SetPtEtaPhiE(jet->PT, jet->Eta, jet->Phi, jet_i_energy);
@@ -243,8 +244,8 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
           double DiJetMass = (Jet_1+Jet_2).M();
           if (DiJetMass > DiJetMass_final){
             DiJetMass_final = DiJetMass;
-            Jet_leading_vec = Jet_1;
-            Jet_sleading_vec = Jet_2;
+            jetLeadingVec = Jet_1;
+            jetSleadingVec = Jet_2;
             dijet_index1 = k;
             dijet_index2 = sj;
           }
@@ -302,14 +303,14 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
       }
     }
 
-    double delta_eta_diJet = abs(Jet_leading_vec.Eta()-Jet_sleading_vec.Eta());
+    double delta_eta_diJet = abs(jetLeadingVec.Eta()-jetSleadingVec.Eta());
     //double tauMass = (Tau1HadTLV + Tau2HadTLV).M();
     double ht = 0.;
-    transmass = TMath::Sqrt(TMath::Abs(2*Muon1TLV.Pt()*MET*(1-TMath::Cos(normalizedDphi(Muon1TLV.Phi() - Met_phi)))));
+    double transmass = TMath::Sqrt(TMath::Abs(2*Muon1TLV.Pt()*MET*(1-TMath::Cos(normalizedDphi(Muon1TLV.Phi() - Met_phi)))));
     double st = 0.;
 
     if (jet_pt_condition > 1) {
-      st += Muon1TLV.Pt() + Muon2TLV.Pt() + Jet_leading_vec.Pt() + Jet_sleading_vec.Pt();
+      st += Muon1TLV.Pt() + Muon2TLV.Pt() + jetLeadingVec.Pt() + jetSleadingVec.Pt();
 
       for (int i = 0; i < jetsList.size(); i++) {
         ht += jetsList[i].Pt();
@@ -322,7 +323,7 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
     pass_cuts[0] = 1;
 
     // Events with 2 taus with min pt
-    if ((Muon1TLV.Pt() > tau_pt_cut) && (Muon2TLV.Pt() > muon_pt_cut)){
+    if ((Muon1TLV.Pt() > muon_pt_cut) && (Muon2TLV.Pt() > muon_pt_cut)){
       pass_cuts[1] = 1;
     }
     // Events with 2 taus with max eta
@@ -374,13 +375,13 @@ PhenoAnalysis::PhenoAnalysis(TChain& chain, TFile* theFile, TDirectory *cdDir[],
 
       if (pass_cuts[i] == 1){
         _hmap_Nevents[i]->Fill(1.0);
-        if(Jet_leading_vec.Pt() > 1.0){
-	  _hmap_lead_jet_pT[i]->Fill(Jet_leading_vec.Pt());
-	  _hmap_lead_jet_eta[i]->Fill(Jet_leading_vec.Eta());
-	  _hmap_lead_jet_phi[i]->Fill(Jet_leading_vec.Phi());
-          _hmap_slead_jet_pT[i]->Fill(Jet_sleading_vec.Pt());
-          _hmap_slead_jet_eta[i]->Fill(Jet_sleading_vec.Eta());
-          _hmap_slead_jet_phi[i]->Fill(Jet_sleading_vec.Phi());
+        if(jetLeadingVec.Pt() > 1.0){
+	  _hmap_lead_jet_pT[i]->Fill(jetLeadingVec.Pt());
+	  _hmap_lead_jet_eta[i]->Fill(jetLeadingVec.Eta());
+	  _hmap_lead_jet_phi[i]->Fill(jetLeadingVec.Phi());
+          _hmap_slead_jet_pT[i]->Fill(jetSleadingVec.Pt());
+          _hmap_slead_jet_eta[i]->Fill(jetSleadingVec.Eta());
+          _hmap_slead_jet_phi[i]->Fill(jetSleadingVec.Phi());
         }
 	_hmap_muon1_pT[i]->Fill(Muon1TLV.Pt());
 	_hmap_muon1_eta[i]->Fill(Muon1TLV.Eta());

@@ -5,12 +5,15 @@ jet_eta_max: 2.5
 b_jet_pt_min: 30.0
 DR_jet_lep_max: 0.3
 // For Muons
-muon_pt_min: 40.0 
+muon_pt_min: 40.0
 // Topology
 met_min: 0.0
 transversemassmin: 0.0
 //Histograms cuts
-muon_pt_cut: 20.0
+muon_pt_cut: 50.0
 muon_eta_cut: 2.1
 deltaEta_diJet_cut: 3.8
 diJetmass_cut: 500.0
+MET_cut: 60.0
+transmass_cut: 50.0
+VBF_jetPt_min: 40.0
